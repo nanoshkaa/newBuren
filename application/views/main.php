@@ -14,8 +14,7 @@
  
 
   
-      <link rel="stylesheet" href="style.css">
-
+      
   
 </head>
 
@@ -75,7 +74,7 @@
       </div>
   </div>
  
-  <script src="index.js"></script>
+  <script src="/assets/javascript/index.js"></script>
 
 </body>
 </html>

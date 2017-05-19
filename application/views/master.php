@@ -1,6 +1,6 @@
 <meta charset="utf-8">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-<link rel="stylesheet" type="text/css" href="/assests/css/style.css">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
       <!--Google Fonts-->
       <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700' rel='stylesheet' type='text/css'>
@@ -11,6 +11,7 @@
       <link href="../assets/index/css/icon-moon.css" rel="stylesheet" media="screen">
       <!--Animations-->
       <link href="../assets/index/css/animate.css" rel="stylesheet" media="screen">
+      <link href="../assets/css/style.css" rel="stylesheet" media="screen">
       <!--Theme Styles-->
       <link href="../assets/index/css/theme-styles.css" rel="stylesheet" media="screen">
     <!--Color Schemes-->
