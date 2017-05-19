@@ -27,8 +27,13 @@
   </div>
    <div class=" navbar-collapse" >
           <ul class="sign">
-            <li><a href="">Sign In</a></li>
-            <li><a href="">Sign Up</a></li>
+            <li><a href="/users/show_sign_in">Sign In</a></li>
+	        <li><a href="/users/show_sign_up">Sign Up</a></li>
+	        <li><a href="/users/sign_out">Sign Out</a></li>
+	        <li><a href="/users/show_profile">Profile</a></li>
+	        <li><a href="/users/show_my_profile">My Profile</a></li>
+	        <li><a href="/users/faq">FAQ</a></li>
+	        <li><a href="/users/contact">Contact</a></li>
           </ul>
     </div><!-- /.navbar-collapse -->
 </div>
