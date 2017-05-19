@@ -26,6 +26,15 @@ class Users extends CI_Controller{
 
 		$this->load->view('my_profile');
 	}
+	public function show_user_profile($id){
+		$this->load->model('User');
+		$user = $this->User->show_user($id);
+		$this->load->view('user_profile.php',['user'=> $user]);
+	}
+	public function show_profile (){	 
+		$all_users = $this->user->get_all_user();
+		$this->load->view('profile',['all_users'=> $all_users]);
+	}
 	public function faq (){
 		$this->load->view('faq.php');
 	}
@@ -113,7 +122,7 @@ function add_profile_img() {
 			
 				if ($_FILES["image"]["tmp_name"]) {
 
-					$target_dir = "/Users/hameed/GitHub/Hameed/Hameed/application/assets/image/";
+		$target_dir = "C:/Users/ASUS/Documents/GitHub/newBuren/application/assets/image/profile/";
 					$target_file = $target_dir . basename($_FILES["image"]["name"]);
 					$uploadOk = 1;
 					$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
@@ -139,7 +148,7 @@ function add_profile_img() {
 					// Check if $uploadOk is set to 0 by an error
 					if ($uploadOk == 0) {
 						$this->session->set_flashdata('errors', $errors);
-						$this->load->view('my_profile.php');
+						$this->load->view('my_profile.php',$errors);
 					// if everything is ok, try to upload file
 					} else {
 					    if (copy($_FILES["image"]["tmp_name"], $target_file)) {
@@ -148,11 +157,11 @@ function add_profile_img() {
 							$this->load->model('user');
 						$this->user->add_img($this->input->post(), $target_file);
 							$this->session->set_flashdata('errors', $errors);
-							$this->load->view('my_profile.php');
+							$this->load->view('my_profile.php',$errors);
 					    } else {
 					        $errors[] = "<p>Sorry, there was an error uploading your file.</p>";
 							$this->session->set_flashdata('errors', $errors);
-							$this->load->view('my_profile.php');
+							$this->load->view('my_profile.php',$errors);
 					    }
 					}
 				} else {
@@ -223,7 +232,7 @@ public function sign_in(){
 	else
 	{
 		$message['errors']="invalid email or password";
-		$this->load->view('sign-in');
+		$this->load->view('sign-in',$message);
 	}
 
 

@@ -20,7 +20,8 @@
 		<input type="submit" name="submit" class="btn btn-secondary btn-md value="Log in">	
 		</form>
 	</div>
-	<?php if(isset($errors))
+	<?php 
+	if(isset($errors))
 	{
 		echo $errors;
 	}?>

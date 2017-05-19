@@ -7,6 +7,8 @@
 <body>
 <header>
 	<li><a href="/users/index">Main</a></li>
+  <h3>Hallo <?= ($this->session->userdata('name'));
+           ?></h3>
 	<h2 class="text-center">Multiculti dineren</h2>
 	<p class="text-center">Begin met multiculti dineren door je hieronder aan te melden. Geef aan of je graag te gast wilt zijn of dat je als host een diner wilt organiseren.</p>
 	</header>
@@ -30,8 +32,7 @@
               </div>
               <button type="submit" class="btn btn-default">Voeg foto toe</button>
 			</form>
-			<?= ($this->session->userdata('user_id'));
-					 ?>
+			
     	<!-- <p class="help-block">Voeg een foto voor je of je gezin toe</p><br> -->
 </body>
 </html>

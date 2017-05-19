@@ -4,9 +4,7 @@ class user extends CI_Model{
 {
 	parent::__construct();
 }
-	public function get_all_users (){
-		return $this->db->query('SELECT * FROM users')->result_array();
-	}
+	
 	public function is_user_exist($data)
 {
 	
@@ -25,7 +23,7 @@ class user extends CI_Model{
 
 }
 	public function get_all_user(){
-		$query = 'SELECT * FROM users ';
+		$query = 'SELECT * FROM users, situation , family_info , fotos ';
 		return $this->db->query($query)->result_array();
 	}
 	public function get_user($post){
@@ -40,6 +38,11 @@ class user extends CI_Model{
 		$query = "SELECT * FROM users where email = '{$email}'";
 
 		return $this->db->query($query)->row_array();
+	}
+	public function show_user($id) {
+		$query = "SELECT * FROM users Where id =? ";
+		$values = [$id];
+		return $this->db->query($query, $values)->result_array();
 	}
 	public function insert_user($post){
 
@@ -150,21 +153,11 @@ class user extends CI_Model{
 			
 	}
 
-	public function show_user($id){
-		$query = "SELECT * FROM users where id =?";
-		$values = [$id];
-		return $this->db->query($query , $values)->row_array();
-	}
 	public function add_img($post,$img) {
 		$user_id = $this->session->userdata('user_id');
-		 var_dump($user_id);
-		// var_dump($img);
-		die();
-       $query = "INSERT INTO foto (foto_profile, created_at, updated_at, users_id) VALUES (?, NOW(), NOW(),?)";
+       $query = "INSERT INTO fotos (foto_profile, created_at, updated_at, users_id) VALUES (?, NOW(), NOW(),?)";
        $values = [$img, $this->session->userdata('user_id')];
         $this->db->query($query, $values);
-        var_dump($query);
-        die();
      }
     
 }
