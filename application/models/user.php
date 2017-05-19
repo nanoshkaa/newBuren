@@ -26,6 +26,30 @@ class user extends CI_Model{
 		$query = 'SELECT * FROM users, situation , family_info , fotos group by email ';
 		return $this->db->query($query)->result_array();
 	}
+	public function filter($data){
+		// var_dump($data);
+		// die();
+		  if (isset($data['host'])) {
+		   $this->db->like('host',$data['host']);
+			$this->db->like('total_n',$data['total_n']);
+			$this->db->like('location',$data['location']);
+			$this->db->group_by ('email');
+			$filter = $this->db->get('users, situation , family_info , fotos');
+		 // var_dump($filter);
+		 // die();
+    return $filter->result_array();
+	}
+	else  if (isset($data['guest'])) {
+		$this->db->like('guest',$data['guest']);
+			$this->db->like('total_n',$data['total_n']);
+			$this->db->like('location',$data['location']);
+			$this->db->group_by ('email');
+			$filter = $this->db->get('users, situation , family_info , fotos');
+		 // var_dump($filter);
+		 // die();
+    return $filter->result_array();
+	}
+}
 	public function get_user($post){
 		$email = ($post['email']);
 		$password = ($post['password']);

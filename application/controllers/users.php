@@ -41,6 +41,13 @@ class Users extends CI_Controller{
 	public function contact (){
 		$this->load->view('contact.php');
 	}
+	public function filters (){
+		 $ddd = $this->input->post();
+		 $this->load->model('user');
+         $res = $this->user->filter($ddd);
+         $this->load->view('profile',['filters'=> $res]);
+		
+	}
         public function sign_up(){
 
           $this->form_validation->set_rules('name','name','required|alpha|min_length[3]|max_length[25]|trim',array(
