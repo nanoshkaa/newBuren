@@ -336,7 +336,7 @@ $config['compress_output'] = FALSE;
 | regarding date handling.
 |
 */
-$config['time_reference'] = 'date_default_timezone_set(date_default_timezone_get());';
+$config['time_reference'] = 'local';
 
 
 /*
