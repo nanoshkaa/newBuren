@@ -18,7 +18,7 @@
 				<?php echo $all_users[$i] ['describtion']; ?></a><br>
 				<?php echo $all_users[$i] ['total_n']; ?></a><br>
 				<?php echo $all_users[$i] ['location']; ?></a><br>
-				<img src="<?php echo $all_users[$i] ['foto_profile']; ?>">
+				<img class="profile_pic img-circle img-responsive" src=".<?php echo $all_users[$i] ['foto_profile']; ?>">
 
 
 
@@ -33,7 +33,7 @@
 				<?php echo $filters[$i] ['describtion']; ?></a><br>
 				<?php echo $filters[$i] ['total_n']; ?></a><br>
 				<?php echo $filters[$i] ['location']; ?></a><br>
-				<img src="<?php echo $filters[$i] ['foto_profile']; ?>">
+				<img class="profile_pic img-circle img-responsive" src=".<?php echo $filters[$i] ['foto_profile']; ?>">
 
 
 
