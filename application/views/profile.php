@@ -15,10 +15,10 @@
 				echo $all_users[$i] ['host']."<br>";
 				 ?>
 				<a href="/Users/show_user_profile/<?= $all_users[$i]['users_id'] ?>"><?php echo $all_users[$i] ['name']; ?></a><br>
-				<?php echo $all_users[$i] ['describtion']; ?></a><br>
-				<?php echo $all_users[$i] ['total_n']; ?></a><br>
-				<?php echo $all_users[$i] ['location']; ?></a><br>
-				<img src="<?php echo $all_users[$i] ['foto_profile']; ?>">
+				<?php echo $all_users[$i] ['describtion']; ?><br>
+				<?php echo $all_users[$i] ['total_n']; ?><br>
+				<?php echo $all_users[$i] ['location']; ?><br>
+				<img class="img-circle img-responsive profile_pic" src=".<?php echo $all_users[$i]['foto_profile']; ?>">
 
 
 
@@ -30,10 +30,10 @@
 				echo $filters[$i] ['host']."<br>";
 				 ?>
 				<a href="/Users/show_user_profile/<?= $filters[$i]['users_id'] ?>"><?php echo $filters[$i] ['name']; ?></a><br>
-				<?php echo $filters[$i] ['describtion']; ?></a><br>
-				<?php echo $filters[$i] ['total_n']; ?></a><br>
-				<?php echo $filters[$i] ['location']; ?></a><br>
-				<img src="<?php echo $filters[$i] ['foto_profile']; ?>">
+				<?php echo $filters[$i] ['describtion']; ?><br>
+				<?php echo $filters[$i] ['total_n']; ?><br>
+				<?php echo $filters[$i] ['location']; ?><br>
+				<img  class="img-circle img-responsive profile_pic" src=".<?php echo $filters[$i] ['foto_profile']; ?>">
 
 
 

@@ -116,5 +116,10 @@ button#send {
   margin-top: 20px;
   letter-spacing: 4px;
 }
+.profile_pic{
+  max-width: 4%;
+  height: auto;
+}
+
 
     </style>
