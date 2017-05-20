@@ -29,26 +29,34 @@ class user extends CI_Model{
 	public function filter($data){
 		// var_dump($data);
 		// die();
-		  if (isset($data['host'])) {
-		   $this->db->like('host',$data['host']);
+			if (isset($data['guest'])) {
+			$this->db->like('guest',$data['guest']);
+			}
+		  	if (isset($data['host'])){
+		   	$this->db->like('host',$data['host']);
+		    }
+		   	 if (isset($data['total_n'])) {
 			$this->db->like('total_n',$data['total_n']);
+			}
+			if (isset($data['location'])) {
 			$this->db->like('location',$data['location']);
+			}
 			$this->db->group_by ('email');
 			$filter = $this->db->get('users, situation , family_info , fotos');
 		 // var_dump($filter);
 		 // die();
     return $filter->result_array();
 	}
-	else  if (isset($data['guest'])) {
-		$this->db->like('guest',$data['guest']);
-			$this->db->like('total_n',$data['total_n']);
-			$this->db->like('location',$data['location']);
-			$this->db->group_by ('email');
-			$filter = $this->db->get('users, situation , family_info , fotos');
-		 // var_dump($filter);
-		 // die();
-    return $filter->result_array();
-	}
+	// else  if (isset($data['guest'])) {
+	// 	$this->db->like('guest',$data['guest']);
+	// 		$this->db->like('total_n',$data['total_n']);
+	// 		$this->db->like('location',$data['location']);
+	// 		$this->db->group_by ('email');
+	// 		$filter = $this->db->get('users, situation , family_info , fotos');
+	// 	 // var_dump($filter);
+	// 	 // die();
+ //    return $filter->result_array();
+	// }
 }
 	public function get_user($post){
 		$email = ($post['email']);
