@@ -23,8 +23,12 @@ class user extends CI_Model{
 
 }
 	public function get_all_user(){
-		$query = 'SELECT * FROM users, situation , family_info , fotos group by email ';
-		return $this->db->query($query)->result_array();
+		$this->db->select('*');
+		$this->db->from('users, situation , family_info , fotos');
+		$this->db->group_by ('foto_profile,email');
+		$query = $this->db->get(); ;
+		
+		return $query->result_array();
 	}
 	public function filter($data){
 		// var_dump($data);

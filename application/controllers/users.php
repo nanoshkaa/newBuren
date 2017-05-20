@@ -129,7 +129,7 @@ function add_profile_img() {
 			
 				if ($_FILES["image"]["tmp_name"]) {
 
-		$target_dir = "C:/Users/ASUS/Documents/GitHub/newBuren/application/assets/image/profile/";
+		$target_dir = "./assets/image/profile/";
 					$target_file = $target_dir . basename($_FILES["image"]["name"]);
 					$uploadOk = 1;
 					$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
