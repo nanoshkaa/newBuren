@@ -41,7 +41,8 @@
 	  </ul>
 	</nav>
 	<section id="header" class="header">
-	<img  src="15DINNERJP1-master675.jpg">
+
+	<img  src="./../image/main_pic/15DINNERJP1-master675.jpg">
 
 	  <h1 id="heading">Multiculti dineren</h1>
 	</section>
@@ -67,7 +68,7 @@
 	           <h4>Designed by:</h4>
 	            <a href="https://www.linkedin.com/in/mohammad-abo-hassan-780462113/">Mohammad</a><br>
 	            <a href="https://www.linkedin.com/in/naima-daruich-b64128b/">Naima</a><br>
-	            <a href="https://www.linkedin.com/in/hameed-alhowidi-a24b58117/">Hmeed</a><br>
+	            <a href="https://www.linkedin.com/in/hameed-alhowidi-a24b58117/">Hameed</a><br>
 	         </div>
 	        </div>
 	      </div>

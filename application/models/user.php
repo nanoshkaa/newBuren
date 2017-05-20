@@ -57,7 +57,7 @@ class user extends CI_Model{
 	// 	 // die();
  //    return $filter->result_array();
 	// }
-}
+//}
 	public function get_user($post){
 		$email = ($post['email']);
 		$password = ($post['password']);

@@ -13,7 +13,7 @@
       <link href="../assets/index/css/animate.css" rel="stylesheet" media="screen">
       <link href="../assets/css/style.css" rel="stylesheet" media="screen">
       <!--Theme Styles-->
-      <link href="../assets/index/css/theme-styles.css" rel="stylesheet" media="screen">
+      <link <link rel="stylesheet" type="text/css" href="<?= base_url();?>assets/css/style.css" rel="stylesheet" media="screen">
     <!--Color Schemes-->
     <link class="color-scheme" href="../assets/index/css/colors/color-default.css" rel="stylesheet" media="screen">
     <!--Modernizr-->
