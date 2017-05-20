@@ -42,12 +42,12 @@
 	</nav>
 	<section id="header" class="header">
 
-	<img  src="./../image/main_pic/15DINNERJP1-master675.jpg">
+	<img  src="../assets/image/main_pic/15DINNERJP1-master675.jpg">
 
 	  <h1 id="heading">Multiculti dineren</h1>
 	</section>
 	  <section class="content">
-	        <img src="Capture.png" alt="Capture" width="175">
+	        <img src="../assets/image/main_pic/Capture.png" alt="Capture" width="175">
 	        <p>Begin met multiculti dineren door hieronder aan te geven of je graag te gast wilt zijn of dat je als host een diner wilt organiseren.</p>
 	        <a href="/users/show_profile"> <button type="button" class="btn btn-primary btn-lg">Bekijk gezinnen die al mee doen</button></a>
 	  </section>
