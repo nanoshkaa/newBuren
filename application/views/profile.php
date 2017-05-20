@@ -14,10 +14,10 @@
 			for ($i=0; $i < count($all_users); $i++) { 
 				echo $all_users[$i] ['host']."<br>";
 				 ?>
-				<a href="/Users/show_user_profile/<?= $all_users[$i]['users_id'] ?>"><?php echo $all_users[$i] ['name']; ?></a><br>
-				<?php echo $all_users[$i] ['describtion']; ?><br>
-				<?php echo $all_users[$i] ['total_n']; ?><br>
-				<?php echo $all_users[$i] ['location']; ?><br>
+				<a href="/Users/show_user_profile/<?= $all_users[$i]['users_id'] ?>"><?php echo $all_users[$i]['name']; ?></a><br>
+				<?php echo $all_users[$i]['describtion']; ?><br>
+				<?php echo $all_users[$i]['total_n']; ?><br>
+				<?php echo $all_users[$i]['location']; ?><br>
 				<img class="img-circle img-responsive profile_pic" src=".<?php echo $all_users[$i]['foto_profile']; ?>">
 
 
@@ -47,7 +47,7 @@
 					<label class="checkbox-inline">
   					<input type="checkbox" id="inlineCheckbox2" name="host" value="host" checked >Host</label><br>
   					<label for="exampleInputFamilySum">Aantaallen van je gezin:</label><br>
-	 				<input type="text" name="total_n" value="0" class="form-control" id="exampleInputName1" placeholder="Total number of the family"><br>
+	 				<input type="text" name="total_n"  class="form-control" id="exampleInputName1" placeholder="Total number of the family"><br>
 	 				<label for="exampleInputLocatie" id="exampleInputName1">Heeft locatie?</label><br>
     				<label class="radio-inline" id="exampleInputName1">
   					<input type="radio" name="location" id="inlineRadio2" value="yes" checked >Yes</label>

@@ -25,7 +25,7 @@ class user extends CI_Model{
 	public function get_all_user(){
 		$this->db->select('*');
 		$this->db->from('users, situation , family_info , fotos');
-		$this->db->group_by ('foto_profile');
+		$this->db->group_by ('foto_profile,email');
 		$query = $this->db->get(); ;
 		
 		return $query->result_array();
