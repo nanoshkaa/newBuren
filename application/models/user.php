@@ -25,7 +25,9 @@ class user extends CI_Model{
 	public function get_all_user(){
 		$this->db->select('*');
 		$this->db->from('users, situation , family_info , fotos');
-		$this->db->group_by ('email');
+		$this->db->where('fotos.users_user_id = user_id');
+		$this->db->where('situation.users_user_id = user_id');
+		$this->db->where('family_info.users_user_id = user_id');
 		$query = $this->db->get(); ;
 		
 		return $query->result_array();
@@ -45,7 +47,9 @@ class user extends CI_Model{
 			if (isset($data['location'])) {
 			$this->db->like('location',$data['location']);
 			}
-			$this->db->group_by ('email');
+			$this->db->where('fotos.users_user_id = user_id');
+			$this->db->where('situation.users_user_id = user_id');
+			$this->db->where('family_info.users_user_id = user_id');
 			$filter = $this->db->get('users, situation , family_info , fotos');
 		 // var_dump($filter);
 		 // die();
@@ -191,7 +195,7 @@ class user extends CI_Model{
 
 	public function add_img($post,$img) {
 		$user_id = $this->session->userdata('users_user_id');
-       $query = "INSERT INTO fotos (foto_profile, created_at, updated_at, users_id) VALUES (?, NOW(), NOW(),?)";
+       $query = "INSERT INTO fotos (foto_profile, created_at, updated_at, users_user_id) VALUES (?, NOW(), NOW(),?)";
        $values = [$img, $this->session->userdata('user_id')];
         $this->db->query($query, $values);
      }

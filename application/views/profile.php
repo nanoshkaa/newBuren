@@ -14,7 +14,7 @@
 			for ($i=0; $i < count($all_users); $i++) { 
 				echo $all_users[$i] ['host']."<br>";
 				 ?>
-				<a href="/Users/show_user_profile/<?= $all_users[$i]['users_id'] ?>"><?php echo $all_users[$i] ['name']; ?></a><br>
+				<a href="/Users/show_user_profile/<?= $all_users[$i]['user_id'] ?>"><?php echo $all_users[$i] ['name']; ?></a><br>
 				<?php echo $all_users[$i] ['describtion']; ?></a><br>
 				<?php echo $all_users[$i] ['total_n']; ?></a><br>
 				<?php echo $all_users[$i] ['location']; ?></a><br>
@@ -29,10 +29,10 @@
 			for ($i=0; $i < count($filters); $i++) { 
 				echo $filters[$i] ['host']."<br>";
 				 ?>
-				<a href="/Users/show_user_profile/<?= $filters[$i]['users_id'] ?>"><?php echo $filters[$i] ['name']; ?></a><br>
-				<?php echo $filters[$i] ['describtion']; ?></a><br>
-				<?php echo $filters[$i] ['total_n']; ?></a><br>
-				<?php echo $filters[$i] ['location']; ?></a><br>
+				<a href="/Users/show_user_profile/<?= $filters[$i]['user_id'] ?>"><?php echo $filters[$i]['name']; ?></a><br>
+				<?php echo $filters[$i]['describtion']; ?></a><br>
+				<?php echo $filters[$i]['total_n']; ?></a><br>
+				<?php echo $filters[$i]['location']; ?></a><br>
 				<img class="profile_pic img-circle img-responsive" src=".<?php echo $filters[$i] ['foto_profile']; ?>">
 
 
