@@ -102,7 +102,7 @@ class Users extends CI_Controller{
                 $user = array(
                     'name'=>$user_info['name'],
                 'email'=>$user_info['email'],
-                'user_id'=>$user_info['id'],
+                'user_id'=>$user_info['user_id'],
                 'logged_in'=> TRUE
                 );
                 $this->session->set_userdata($user);
@@ -226,7 +226,7 @@ public function sign_in(){
               (
                 'name'=>$user_info['name'],
                 'email'=>$user_info['email'],
-                'user_id'=>$user_info['id'],
+                'user_id'=>$user_info['user_id'],
                 'logged_in'=> TRUE
                 );
                  

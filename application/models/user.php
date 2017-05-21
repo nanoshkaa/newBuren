@@ -76,7 +76,7 @@ class user extends CI_Model{
 		return $this->db->query($query)->row_array();
 	}
 	public function show_user($id) {
-		$query = "SELECT * FROM users Where id =? ";
+		$query = "SELECT * FROM users Where user_id =? ";
 		$values = [$id];
 		return $this->db->query($query, $values)->result_array();
 	}
@@ -91,7 +91,7 @@ class user extends CI_Model{
 
 		$user_id = $this->session->userdata('user_id');
 		if ($_POST) {
-		$query1 = "INSERT INTO address(street, postcode,city,created_at, updated_at, users_id) VALUES (?,?,?, NOW(),NOW(),?)";
+		$query1 = "INSERT INTO address(street, postcode,city,created_at, updated_at, users_user_id) VALUES (?,?,?, NOW(),NOW(),?)";
 		$values = [$post['street'],$post['postcode'],$post['city'],$user_id];
 		return $this->db->query($query1 , $values);}
 	}
@@ -104,7 +104,7 @@ class user extends CI_Model{
                 'guest'=>$post['gast'],
                 'host'=>$post['host'],
                 'n_guests'=>$post['guests'],
-                'users_id'=>$user_id,
+                'users_user_id'=>$user_id,
                 'created_at'=>date('Y/m/d h:i:sa'),
 				'updated_at'=>date('Y/m/d h:i:sa')
             	);
@@ -115,7 +115,7 @@ class user extends CI_Model{
            		 (
                 'guest'=>$post['gast'],
                 'n_guests'=>$post['guests'],
-             	'users_id'=>$user_id,
+             	'users_user_id'=>$user_id,
                 'created_at'=>date('Y/m/d h:i:sa'),
 				'updated_at'=>date('Y/m/d h:i:sa')
 
@@ -128,7 +128,7 @@ class user extends CI_Model{
             (
                 'host'=>$post['host'],
                 'n_guests'=>$post['guests'],
-                'users_id'=>$user_id,
+                'users_user_id'=>$user_id,
                 'created_at'=>date('Y/m/d h:i:sa'),
 				'updated_at'=>date('Y/m/d h:i:sa')
             );
@@ -174,7 +174,7 @@ class user extends CI_Model{
 		if (isset($post['french'])) {
 			$this->db->set('french',$post['french']);
 			}
-		$this->db->set('users_id',$user_id);	
+		$this->db->set('users_user_id',$user_id);	
 		$this->db->insert('languages');
 			
 	}
@@ -184,13 +184,13 @@ class user extends CI_Model{
 		if (isset($post['family_sum'])) {
 			$this->db->set('total_n',$post['family_sum']);
 			}
-		$this->db->set('users_id',$user_id);
+		$this->db->set('users_user_id',$user_id);
 		$this->db->insert('family_info');
 			
 	}
 
 	public function add_img($post,$img) {
-		$user_id = $this->session->userdata('user_id');
+		$user_id = $this->session->userdata('users_user_id');
        $query = "INSERT INTO fotos (foto_profile, created_at, updated_at, users_id) VALUES (?, NOW(), NOW(),?)";
        $values = [$img, $this->session->userdata('user_id')];
         $this->db->query($query, $values);
