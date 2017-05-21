@@ -1,0 +1,183 @@
+-- MySQL Workbench Forward Engineering
+
+SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
+SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
+SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
+
+-- -----------------------------------------------------
+-- Schema n_buren
+-- -----------------------------------------------------
+
+-- -----------------------------------------------------
+-- Schema n_buren
+-- -----------------------------------------------------
+CREATE SCHEMA IF NOT EXISTS `n_buren` DEFAULT CHARACTER SET utf8 ;
+USE `n_buren` ;
+
+-- -----------------------------------------------------
+-- Table `n_buren`.`situation`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `n_buren`.`situation` (
+  `id` INT(11) NOT NULL AUTO_INCREMENT,
+  `guest` VARCHAR(45) NULL DEFAULT NULL,
+  `host` VARCHAR(45) NULL DEFAULT NULL,
+  `n_guests` TINYINT(255) UNSIGNED NULL DEFAULT NULL,
+  `nederlander` VARCHAR(255) NULL DEFAULT NULL,
+  `created_at` DATETIME NULL DEFAULT NULL,
+  `updated_at` DATETIME NULL DEFAULT NULL,
+  PRIMARY KEY (`id`))
+ENGINE = InnoDB
+AUTO_INCREMENT = 5
+DEFAULT CHARACTER SET = utf8;
+
+
+-- -----------------------------------------------------
+-- Table `n_buren`.`family_info`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `n_buren`.`family_info` (
+  `id` INT(11) NOT NULL AUTO_INCREMENT,
+  `age` TINYINT(255) UNSIGNED NULL DEFAULT NULL,
+  `gender` VARCHAR(45) NULL DEFAULT NULL,
+  `total_n` TINYINT(255) UNSIGNED NULL DEFAULT NULL,
+  `created_at` DATETIME NULL DEFAULT NULL,
+  `updated_at` DATETIME NULL DEFAULT NULL,
+  PRIMARY KEY (`id`))
+ENGINE = InnoDB
+AUTO_INCREMENT = 4
+DEFAULT CHARACTER SET = utf8;
+
+
+-- -----------------------------------------------------
+-- Table `n_buren`.`users`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `n_buren`.`users` (
+  `id` INT(11) NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(255) NULL DEFAULT NULL,
+  `email` VARCHAR(255) NULL DEFAULT NULL,
+  `password` VARCHAR(45) NULL DEFAULT NULL,
+  `age_user` TINYINT(255) UNSIGNED NULL DEFAULT NULL,
+  `telphon_number` VARCHAR(255) NULL DEFAULT NULL,
+  `gender_user` VARCHAR(45) NULL DEFAULT NULL,
+  `location` VARCHAR(45) NULL DEFAULT NULL,
+  `describtion` VARCHAR(255) NULL DEFAULT NULL,
+  `profile_type` VARCHAR(45) NULL DEFAULT NULL,
+  `created_at` DATETIME NULL DEFAULT NULL,
+  `updated_at` DATETIME NULL DEFAULT NULL,
+  `situation_id` INT(11) NOT NULL,
+  `family_info_id` INT(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  INDEX `fk_users_situation1_idx` (`situation_id` ASC),
+  INDEX `fk_users_family_info1_idx` (`family_info_id` ASC),
+  CONSTRAINT `fk_users_situation1`
+    FOREIGN KEY (`situation_id`)
+    REFERENCES `n_buren`.`situation` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_users_family_info1`
+    FOREIGN KEY (`family_info_id`)
+    REFERENCES `n_buren`.`family_info` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB
+AUTO_INCREMENT = 5
+DEFAULT CHARACTER SET = utf8;
+
+
+-- -----------------------------------------------------
+-- Table `n_buren`.`address`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `n_buren`.`address` (
+  `id` INT(11) NOT NULL AUTO_INCREMENT,
+  `street` VARCHAR(255) NULL DEFAULT NULL,
+  `postcode` VARCHAR(255) NULL DEFAULT NULL,
+  `city` VARCHAR(255) NULL DEFAULT NULL,
+  `created_at` DATETIME NULL DEFAULT NULL,
+  `updated_at` DATETIME NULL DEFAULT NULL,
+  `users_id` INT(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  INDEX `fk_address_users1_idx` (`users_id` ASC),
+  CONSTRAINT `fk_address_users1`
+    FOREIGN KEY (`users_id`)
+    REFERENCES `n_buren`.`users` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB
+AUTO_INCREMENT = 5
+DEFAULT CHARACTER SET = utf8;
+
+
+-- -----------------------------------------------------
+-- Table `n_buren`.`fotos`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `n_buren`.`fotos` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `foto_profile` VARCHAR(255) NULL DEFAULT NULL,
+  `foto_er` VARCHAR(255) NULL DEFAULT NULL,
+  `created_at` DATETIME NULL DEFAULT NULL,
+  `updated_at` DATETIME NULL DEFAULT NULL,
+  `users_id` INT(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  INDEX `fk_fotos_users1_idx` (`users_id` ASC),
+  CONSTRAINT `fk_fotos_users1`
+    FOREIGN KEY (`users_id`)
+    REFERENCES `n_buren`.`users` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8;
+
+
+-- -----------------------------------------------------
+-- Table `n_buren`.`languages`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `n_buren`.`languages` (
+  `id` INT(11) NOT NULL AUTO_INCREMENT,
+  `english` VARCHAR(45) NULL DEFAULT NULL,
+  `dutch` VARCHAR(45) NULL DEFAULT NULL,
+  `arabic` VARCHAR(45) NULL DEFAULT NULL,
+  `french` VARCHAR(45) NULL DEFAULT NULL,
+  `spanish` VARCHAR(45) NULL DEFAULT NULL,
+  `tijrijna` VARCHAR(45) NULL DEFAULT NULL,
+  `faresi` VARCHAR(45) NULL DEFAULT NULL,
+  `turquish` VARCHAR(45) NULL DEFAULT NULL,
+  `polsk` VARCHAR(45) NULL DEFAULT NULL,
+  `russian` VARCHAR(45) NULL DEFAULT NULL,
+  `other` VARCHAR(45) NULL DEFAULT NULL,
+  `created_at` DATETIME NULL DEFAULT NULL,
+  `updated_at` DATETIME NULL DEFAULT NULL,
+  `users_id` INT(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  INDEX `fk_languages_users1_idx` (`users_id` ASC),
+  CONSTRAINT `fk_languages_users1`
+    FOREIGN KEY (`users_id`)
+    REFERENCES `n_buren`.`users` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB
+AUTO_INCREMENT = 4
+DEFAULT CHARACTER SET = utf8;
+
+
+-- -----------------------------------------------------
+-- Table `n_buren`.`messages`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `n_buren`.`messages` (
+  `id` INT(11) NOT NULL AUTO_INCREMENT,
+  `message` VARCHAR(255) NULL DEFAULT NULL,
+  `created_at` DATETIME NULL DEFAULT NULL,
+  `updated_at` DATETIME NULL DEFAULT NULL,
+  `users_id` INT(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  INDEX `fk_messages_users1_idx` (`users_id` ASC),
+  CONSTRAINT `fk_messages_users1`
+    FOREIGN KEY (`users_id`)
+    REFERENCES `n_buren`.`users` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8;
+
+
+SET SQL_MODE=@OLD_SQL_MODE;
+SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
+SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
