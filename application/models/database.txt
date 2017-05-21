@@ -15,39 +15,6 @@ CREATE SCHEMA IF NOT EXISTS `n_buren` DEFAULT CHARACTER SET utf8 ;
 USE `n_buren` ;
 
 -- -----------------------------------------------------
--- Table `n_buren`.`situation`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `n_buren`.`situation` (
-  `id` INT(11) NOT NULL AUTO_INCREMENT,
-  `guest` VARCHAR(45) NULL DEFAULT NULL,
-  `host` VARCHAR(45) NULL DEFAULT NULL,
-  `n_guests` TINYINT(255) UNSIGNED NULL DEFAULT NULL,
-  `nederlander` VARCHAR(255) NULL DEFAULT NULL,
-  `created_at` DATETIME NULL DEFAULT NULL,
-  `updated_at` DATETIME NULL DEFAULT NULL,
-  PRIMARY KEY (`id`))
-ENGINE = InnoDB
-AUTO_INCREMENT = 5
-DEFAULT CHARACTER SET = utf8;
-
-
--- -----------------------------------------------------
--- Table `n_buren`.`family_info`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `n_buren`.`family_info` (
-  `id` INT(11) NOT NULL AUTO_INCREMENT,
-  `age` TINYINT(255) UNSIGNED NULL DEFAULT NULL,
-  `gender` VARCHAR(45) NULL DEFAULT NULL,
-  `total_n` TINYINT(255) UNSIGNED NULL DEFAULT NULL,
-  `created_at` DATETIME NULL DEFAULT NULL,
-  `updated_at` DATETIME NULL DEFAULT NULL,
-  PRIMARY KEY (`id`))
-ENGINE = InnoDB
-AUTO_INCREMENT = 4
-DEFAULT CHARACTER SET = utf8;
-
-
--- -----------------------------------------------------
 -- Table `n_buren`.`users`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `n_buren`.`users` (
@@ -63,21 +30,7 @@ CREATE TABLE IF NOT EXISTS `n_buren`.`users` (
   `profile_type` VARCHAR(45) NULL DEFAULT NULL,
   `created_at` DATETIME NULL DEFAULT NULL,
   `updated_at` DATETIME NULL DEFAULT NULL,
-  `situation_id` INT(11) NOT NULL,
-  `family_info_id` INT(11) NOT NULL,
-  PRIMARY KEY (`id`),
-  INDEX `fk_users_situation1_idx` (`situation_id` ASC),
-  INDEX `fk_users_family_info1_idx` (`family_info_id` ASC),
-  CONSTRAINT `fk_users_situation1`
-    FOREIGN KEY (`situation_id`)
-    REFERENCES `n_buren`.`situation` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_users_family_info1`
-    FOREIGN KEY (`family_info_id`)
-    REFERENCES `n_buren`.`family_info` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+  PRIMARY KEY (`id`))
 ENGINE = InnoDB
 AUTO_INCREMENT = 5
 DEFAULT CHARACTER SET = utf8;
@@ -103,6 +56,29 @@ CREATE TABLE IF NOT EXISTS `n_buren`.`address` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
 AUTO_INCREMENT = 5
+DEFAULT CHARACTER SET = utf8;
+
+
+-- -----------------------------------------------------
+-- Table `n_buren`.`family_info`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `n_buren`.`family_info` (
+  `id` INT(11) NOT NULL AUTO_INCREMENT,
+  `age` TINYINT(255) UNSIGNED NULL DEFAULT NULL,
+  `gender` VARCHAR(45) NULL DEFAULT NULL,
+  `total_n` TINYINT(255) UNSIGNED NULL DEFAULT NULL,
+  `created_at` DATETIME NULL DEFAULT NULL,
+  `updated_at` DATETIME NULL DEFAULT NULL,
+  `users_id` INT(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  INDEX `fk_family_info_users1_idx` (`users_id` ASC),
+  CONSTRAINT `fk_family_info_users1`
+    FOREIGN KEY (`users_id`)
+    REFERENCES `n_buren`.`users` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB
+AUTO_INCREMENT = 4
 DEFAULT CHARACTER SET = utf8;
 
 
@@ -175,6 +151,30 @@ CREATE TABLE IF NOT EXISTS `n_buren`.`messages` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8;
+
+
+-- -----------------------------------------------------
+-- Table `n_buren`.`situation`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `n_buren`.`situation` (
+  `id` INT(11) NOT NULL AUTO_INCREMENT,
+  `guest` VARCHAR(45) NULL DEFAULT NULL,
+  `host` VARCHAR(45) NULL DEFAULT NULL,
+  `n_guests` TINYINT(255) UNSIGNED NULL DEFAULT NULL,
+  `nederlander` VARCHAR(255) NULL DEFAULT NULL,
+  `created_at` DATETIME NULL DEFAULT NULL,
+  `updated_at` DATETIME NULL DEFAULT NULL,
+  `users_id` INT(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  INDEX `fk_situation_users1_idx` (`users_id` ASC),
+  CONSTRAINT `fk_situation_users1`
+    FOREIGN KEY (`users_id`)
+    REFERENCES `n_buren`.`users` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB
+AUTO_INCREMENT = 5
 DEFAULT CHARACTER SET = utf8;
 
 
