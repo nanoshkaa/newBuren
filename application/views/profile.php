@@ -6,8 +6,8 @@
 </head>
 <body>
 <?php $this->load->view('nav_bar'); ?>
-
-	
+  <h3>Hallo <?= ($this->session->userdata('name'));
+           ?></h3>
 	<h4>Schrijf jouw gezin ook in! Klik hier om eenvoudig aan te melden.</h4>
 <?php
 	if (isset($all_users)) {
