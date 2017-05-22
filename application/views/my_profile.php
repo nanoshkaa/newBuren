@@ -6,8 +6,8 @@
 	<title>Nieuve Buren</title>
 </head>
 <body>
-<header>
-<?php $this->load->view('nav_bar'); ?>
+  <header>
+  <?php $this->load->view('nav_bar'); ?>
   <h3>Hallo <?= ($this->session->userdata('name'));
            ?></h3>
 	<h2 class="text-center">Multiculti dineren</h2>
@@ -29,6 +29,7 @@
               
       <div class="form-group">
       <?php 
+      if (isset($user)) {
       for ($i=0; $i < count($user); $i++) { 
         echo $user[$i]['host']."<br>";?>
         <?php echo $user[$i]['name']; ?><br>
@@ -48,7 +49,7 @@
         <?php if (isset($user[$i]['other'])) echo $user[$i]['other']; ?>
         <?php if (isset($user[$i]['foto_profile'])) { ?>
         <img class="profile_pic img-circle img-responsive" src="/.<?php echo $user[$i] ['foto_profile']; ?>">
-      <?php }} ?>
+      <?php }}} ?>
       </div>
       <?php if (empty($user[0]['foto_profile'])) { ?>
     <label for="exampleInputFile">Voeg foto toe</label>

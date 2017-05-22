@@ -117,9 +117,20 @@ button#send {
   letter-spacing: 4px;
 }
 .profile_pic{
-  max-width: 4%;
+  max-width: 7%;
   height: auto;
 }
-
+.d-inline-block{
+  display: inline-block;
+}
+.side_bar{
+  position: relative;
+  width: 20%;
+  height: auto;
+}
+.show_profiles{
+  width: 75%;
+  height: auto;
+}
 
     </style>
