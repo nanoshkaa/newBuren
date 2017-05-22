@@ -49,7 +49,7 @@
         <?php if (isset($user['other'])) echo $user[$i]['other']; ?>
         <?php if (isset($user['foto_profile'])) { ?>
         <img class="profile_pic img-circle img-responsive" src="/.<?php echo $user['foto_profile']; ?>">
-      <?php }}} ?>
+      <?php }} ?>
       </div>
       <div>
       <?php if (empty($user['foto_profile'])) { ?>
