@@ -147,5 +147,5 @@ body {
 
 <!--Libraries and Plugins-->
         <script src="../assets/index/js/landing2.js"></script>
- <?php include 'footer.php' ?> 
+<?php $this->load->view('footer'); ?>
 </html>

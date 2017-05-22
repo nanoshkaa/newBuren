@@ -25,6 +25,6 @@
 	{
 		echo $errors;
 	}?>
-	<?php include 'footer.php' ?>
+	<?php $this->load->view('footer'); ?>
 </body>
 </html>

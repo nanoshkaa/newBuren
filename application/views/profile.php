@@ -59,5 +59,6 @@
   					<input type="submit" class="btn btn-secondary btn-md" value="Filteren!">
 				</form>
 			</div> 
+		<?php $this->load->view('footer'); ?>	
 </body>
 </html>

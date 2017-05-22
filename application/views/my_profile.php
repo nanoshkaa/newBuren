@@ -64,5 +64,6 @@
       <?php };?>
 			
     	<!-- <p class="help-block">Voeg een foto voor je of je gezin toe</p><br> -->
+      <?php $this->load->view('footer'); ?>
 </body>
 </html>

@@ -28,5 +28,6 @@
         <?php if (isset($user[$i]['other'])) echo $user[$i]['other']; ?>
 				<img class="profile_pic img-circle img-responsive" src="/.<?php echo $user[$i] ['foto_profile']; ?>">
 			<?php }	} ?>
+		<?php $this->load->view('footer'); ?>
 </body>
 </html>
