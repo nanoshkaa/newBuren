@@ -14,13 +14,13 @@
 </head>
 
 	<body>
-	<div class="first_row">
+<!-- 	<div class="first_row"> -->
 	  <div id="nav-trigger" class="nav-trigger open">
 	    <span class="line"></span>
 	    <span class="line"></span>
 	    <span class="line"></span>
 	  </div>
-	   <div class=" navbar-collapse" >
+	   <!-- <div class=" navbar-collapse" >
 	          <ul class="sign">
 	            <li><a href="/users/show_sign_in">Sign In</a></li>
 		        <li><a href="/users/show_sign_up">Sign Up</a></li>
@@ -29,12 +29,12 @@
 		        <li><a href="/users/faq">FAQ</a></li>
 		        <li><a href="/users/contact">Contact</a></li>
 	          </ul>
-	    </div><!-- /.navbar-collapse -->
-	</div>
+	    </div><!-- /.navbar-collapse --> 
+<!-- 	</div> -->
 	<nav id="nav" class="out">
 	  <ul>
-	    <li><span class="nav-label">Testimonials</span></span></li>
-	    <li><span class="nav-label">Slider Met Profielen</span></li>
+	    <li><span class="nav-label">Testimonials</span></li>
+	    <li><a href="/users/show_profile"> <span class="nav-label">Slider Met Profielen</span></a></li>
 	    <li><span class="nav-label">Events</span></li>
 	    <li><span class="nav-label">Sponsors</span></li>
 	    <li><span class="nav-label">Mensen Achter NB</span></li>

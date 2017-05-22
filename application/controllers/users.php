@@ -156,6 +156,7 @@ function add_profile_img() {
 					// Check if $uploadOk is set to 0 by an error
 					if ($uploadOk == 0) {
 						$this->session->set_flashdata('errors', $errors);
+						//redirect('../users/add_profile_img');
 						$this->load->view('my_profile.php',$errors);
 					// if everything is ok, try to upload file
 					} else {
@@ -166,16 +167,19 @@ function add_profile_img() {
 						$this->user->add_img($this->input->post(), $target_file);
 							$this->session->set_flashdata('errors', $errors);
 							$this->load->view('my_profile.php',$errors);
+							//redirect('../users/add_profile_img');
 					    } else {
 					        $errors[] = "<p>Sorry, there was an error uploading your file.</p>";
 							$this->session->set_flashdata('errors', $errors);
 							$this->load->view('my_profile.php',$errors);
+							//redirect('../users/add_profile_img');
 					    }
 					}
 				} else {
 					$errors[] = '<p style="color: red">A image file is required</p>';
 					$this->session->set_flashdata('errors', $errors);
-					redirect('');
+					$this->load->view('my_profile.php',$errors);
+					//redirect('../users/add_profile_img');
 				}
 			}
 		 
