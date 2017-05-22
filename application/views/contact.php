@@ -5,16 +5,15 @@
     <?php $this->load->view('master'); ?>
   </head>
   <body>
-    <!-- <?php include 'header.php'; ?> -->
+  <?php $this->load->view('nav_bar'); ?>
     <div id="preloader"><div id="spinner"></div></div>
      
-     <div id="contact_form_bg">
+    <div id="contact_form_bg">
 
-      <header>
-      <li><a href="/users/index">Main</a></li>
-  <h1>Hallo</h1>
-</header>
-<section>
+  <header>
+      <h1>Hallo</h1>
+  </header>
+  <section>
   <div class="arrow-up"></div>
   <form id="contact" class="form-horizontal" role="form" method="post" action="../sacramento/add_contact">
     <div class="form-group">  

@@ -91,7 +91,7 @@ body {
     </style>
   </head>
   <body>
-  <li><a href="/users/index">Main</a></li>
+  <?php $this->load->view('nav_bar'); ?>
     <!--Page Preloading-->
     <div id="preloader"><div id="spinner"></div></div>
 <!-- <?php include('header.php'); ?>
