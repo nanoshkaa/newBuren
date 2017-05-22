@@ -29,30 +29,30 @@
               
       <div class="form-group">
       <?php 
-      if (!empty($user)) {
+      if (isset($user)) {
+      for ($i=0; $i < count($user); $i++) { 
         echo $user[$i]['host']."<br>";?>
-        <?php echo $user['name']; ?><br>
-        <?php echo $user['describtion']; ?><br>
-        <?php echo $user['total_n']; ?><br>
-        <?php echo $user['location']; ?><br>
-        <?php echo $user['city']; ?><br>
-        <?php if (isset($user['english'])) echo $user['english']; ?><br>
-        <?php if (isset($user['nederlands'])) echo $user['nederlands'];?>
-        <?php if (isset($user['turquish'])) echo $user['turquish']; ?>
-        <?php if (isset($user['polsk'])) echo $user['polsk']; ?>
-        <?php if (isset($user['arabic'])) echo $user['arabic']; ?>
-        <?php if (isset($user['russian'])) echo $user['russian']; ?>
-        <?php if (isset($user['tijrijna'])) echo $user['tijrijna']; ?>
-        <?php if (isset($user['faresi'])) echo $user['faresi']; ?>  
-        <?php if (isset($user['spanish'])) echo $user['spanish']; ?>
-        <?php if (isset($user['french'])) echo $user['french']; ?>
-        <?php if (isset($user['other'])) echo $user['other']; ?>
-        <?php if (isset($user['foto_profile'])) { ?>
-        <img class="profile_pic img-circle img-responsive" src="/.<?php echo $user['foto_profile']; ?>">
-      <?php }} ?>
+        <?php echo $user[$i]['name']; ?><br>
+        <?php echo $user[$i]['describtion']; ?><br>
+        <?php echo $user[$i]['total_n']; ?><br>
+        <?php echo $user[$i]['location']; ?><br>
+        <?php echo $user[$i]['city']; ?><br>
+        <?php if (isset($user[$i]['english'])) echo $user[$i]['english']; ?><br>
+        <?php if (isset($user[$i]['nederlands'])) echo $user[$i]['nederlands'];?>
+        <?php if (isset($user[$i]['turquish'])) echo $user[$i]['turquish']; ?>
+        <?php if (isset($user[$i]['polsk'])) echo $user[$i]['polsk']; ?>
+        <?php if (isset($user[$i]['arabic'])) echo $user[$i]['arabic']; ?>
+        <?php if (isset($user[$i]['russian'])) echo $user[$i]['russian']; ?>
+        <?php if (isset($user[$i]['tijrijna'])) echo $user[$i]['tijrijna']; ?>
+        <?php if (isset($user[$i]['faresi'])) echo $user[$i]['faresi']; ?>        <?php if (isset($user[$i]['spanish'])) echo $user[$i]['spanish']; ?>
+        <?php if (isset($user[$i]['french'])) echo $user[$i]['french']; ?>
+        <?php if (isset($user[$i]['other'])) echo $user[$i]['other']; ?>
+        <?php if (isset($user[$i]['foto_profile'])) { ?>
+        <img class="profile_pic img-circle img-responsive" src="/.<?php echo $user[$i] ['foto_profile']; ?>">
+      <?php }}} ?>
       </div>
-      <div>
-      <?php if (empty($user['foto_profile'])) { ?>
+      <div></div>
+      <?php if (empty($user[0]['foto_profile'])) { ?>
     <label for="exampleInputFile">Voeg foto toe</label>
     <form action="/users/add_profile_img" method="post" enctype="multipart/form-data">
     
@@ -63,7 +63,6 @@
       </div>
       </form>
       <?php };?>
-      </div>
 			
     	<!-- <p class="help-block">Voeg een foto voor je of je gezin toe</p><br> -->
       <?php $this->load->view('footer'); ?>
