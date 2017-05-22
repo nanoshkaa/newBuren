@@ -25,8 +25,9 @@ class Users extends CI_Controller{
 	public function show_my_profile (){	 
 		$user_id = $this->session->userdata('user_id');
 		$this->load->model('User');
-		$user = $this->User->show_user($user_id); 
-		$this->load->view('my_profile.php',['user'=> $user]);
+		$user = $this->User->show_user($user_id);
+		$errors = array();
+		$this->load->view('my_profile.php',['user'=> $user]+['errors'=>$errors] );
 	}
 	public function show_user_profile($id){
 		$this->load->model('User');
@@ -144,8 +145,11 @@ class Users extends CI_Controller{
 			// Check if $uploadOk is set to 0 by an error
 			if ($uploadOk == 0) {
 				$this->session->set_flashdata('errors', $errors);
-				//redirect('../users/add_profile_img');
-				$this->load->view('my_profile.php',$errors);
+				$user_id = $this->session->userdata('user_id');
+				$this->load->model('User');
+				$user = $this->User->show_user($user_id); 
+				$this->load->view('my_profile.php',['user'=> $user]+['errors'=>$errors] );
+				//$this->load->view('my_profile.php',$errors + $user);
 			// if everything is ok, try to upload file
 			} else {
 			    if (copy($_FILES["image"]["tmp_name"], $target_file)) {
@@ -153,20 +157,29 @@ class Users extends CI_Controller{
 					$errors[] =  "<p style='color: green'>New Image has succesfully been added</p>";
 					$this->load->model('user');
 				$this->user->add_img($this->input->post(), $target_file);
-					$this->session->set_flashdata('errors', $errors);
-					$this->load->view('my_profile.php',$errors);
+					//$this->session->set_flashdata('errors', $errors);
+					$user_id = $this->session->userdata('user_id');
+				$this->load->model('User');
+				$user = $this->User->show_user($user_id); 
+				$this->load->view('my_profile.php',['user'=> $user]+['errors'=>$errors] );
 					//redirect('../users/add_profile_img');
 			    } else {
 			        $errors[] = "<p>Sorry, there was an error uploading your file.</p>";
-					$this->session->set_flashdata('errors', $errors);
-					$this->load->view('my_profile.php',$errors);
+					//$this->session->set_flashdata('errors', $errors);
+					$user_id = $this->session->userdata('user_id');
+				$this->load->model('User');
+				$user = $this->User->show_user($user_id); 
+				$this->load->view('my_profile.php',['user'=> $user]+['errors'=>$errors] );
 					//redirect('../users/add_profile_img');
 			    }
 			}
 		} else {
 			$errors[] = '<p style="color: red">A image file is required</p>';
-			$this->session->set_flashdata('errors', $errors);
-			$this->load->view('my_profile.php',$errors);
+				//$this->session->set_flashdata('errors', $errors);
+				$user_id = $this->session->userdata('user_id');
+				$this->load->model('User');
+				$user = $this->User->show_user($user_id); 
+				$this->load->view('my_profile.php',['user'=> $user]+['errors'=>$errors] );
 		}
 	}
 			//to do

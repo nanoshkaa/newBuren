@@ -11,8 +11,8 @@
     <p>Hallo <?= ($this->session->userdata('name')); ?></p>
 	</div>
 	<div id="errors">
-        <?php if ($this->session->flashdata('errors')) {
-                $errors = $this->session->flashdata('errors');
+        <?php if ($errors) {
+                //$errors = $this->session->flashdata('errors');
                     for($i=0; $i < count($errors); $i++) {
                         echo  $errors[$i]. "<br>";
                     }

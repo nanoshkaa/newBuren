@@ -1,4 +1,4 @@
-<footer class="navbar-fixed-bottom container text-center">
+<footer class="navbar-bottom container text-center">
 	<p>Designed by:
 	<a href="https://www.linkedin.com/in/mohammad-abo-hassan-780462113/">Mohammad,</a>
 	<a href="https://www.linkedin.com/in/naima-daruich-b64128b/">Naima,</a>
