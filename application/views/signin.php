@@ -116,7 +116,7 @@
     	<input type="submit" class="btn btn-secondary btn-md" value="Meld je nu aan!">
 	 	</form>
  	</div>
- 	<div id="content_login" class="col-md-6">
+ 	<!-- <div id="content_login" class="col-md-6">
 		<?php 
 		date_default_timezone_set('Europe/Amsterdam');
 		?>
@@ -128,7 +128,7 @@
 		<input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password" required><br>
 		<input  type="submit" name="submit" class="btn btn-secondary btn-md" value="Log in">	
 		</form>
-	</div>
+	</div> -->
 	<?php if(isset($errors))
 	{
 		echo $errors;

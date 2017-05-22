@@ -81,6 +81,13 @@ class user extends CI_Model{
 	}
 	public function show_user($id) {
 		$this->db->select('*');
+		$this->db->from('users, fotos');
+		$this->db->where('user_id' , $id);
+		$this->db->where('fotos.users_user_id = user_id');
+		$query1 = $this->db->get()->result_array(); 
+		
+		if (!empty($query1)) {
+		$this->db->select('*');
 		$this->db->from('users, situation, family_info, address, languages, fotos');
 		$this->db->where('user_id' , $id);
 		$this->db->where('fotos.users_user_id = user_id');
@@ -91,8 +98,22 @@ class user extends CI_Model{
 		$query = $this->db->get(); ;
 		
 		return $query->result_array();
-		return $this->db->query($query, $values)->result_array();
+		//return $this->db->query($query, $values)->result_array();
 	}
+		else{
+		$this->db->select('*');
+		$this->db->from('users, situation, family_info, address, languages');
+		$this->db->where('user_id' , $id);
+		$this->db->where('situation.users_user_id = user_id');
+		$this->db->where('languages.users_user_id = user_id');
+		$this->db->where('address.users_user_id = user_id');
+		$this->db->where('family_info.users_user_id = user_id');
+		$query = $this->db->get(); ;
+		
+		return $query->result_array();
+		
+		}
+}
 	public function insert_user($post){
 
 		$query = "INSERT INTO users(name, email,password,age_user,telphon_number, gender_user, location, describtion, profile_type, created_at, updated_at) VALUES (?,?,?,?,?,?,?,?,?, NOW(),NOW())";

@@ -23,9 +23,8 @@
   </div>     
   <div class="form-group">
       <?php 
-      if (isset($user)) {
       for ($i=0; $i < count($user); $i++) { ?>
-        <img class="profile_pic img-circle img-responsive" src="/.<?php echo $user[$i] ['foto_profile']; ?>">
+       <?php if (isset($user[$i]['foto_profile'])) { ?> <img class="profile_pic img-circle img-responsive" src="/.<?php echo $user[$i] ['foto_profile']; ?>"><?php } ?>
         <?php echo $user[$i]['name']; ?><br>
         <?php echo $user[$i]['describtion']; ?><br>
         <?php echo $user[$i]['total_n']; ?><br>
@@ -43,8 +42,8 @@
         <?php if (isset($user[$i]['french'])) echo $user[$i]['french']; ?>
         <?php if (isset($user[$i]['other'])) echo $user[$i]['other']; ?><br>
         <?php echo $user[$i]['host']; ?><br>
-        <?php if (isset($user[$i]['foto_profile'])) { ?>
-      <?php }}} ?>
+        
+      <?php } ?>
   </div>
       <?php if (empty($user[0]['foto_profile'])) { ?>
     <label for="exampleInputFile">Voeg foto toe</label>
