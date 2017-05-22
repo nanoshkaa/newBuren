@@ -6,7 +6,6 @@
 </head>
 <body>
 	<header>
-	<li><a href="/users/index">Main</a></li>
 	<h2 class="text-center">Multiculti dineren</h2>
 	<p class="text-center">Begin met multiculti dineren door je hieronder aan te melden. Geef aan of je graag te gast wilt zijn of dat je als host een diner wilt organiseren.</p>
 	</header>
@@ -66,7 +65,7 @@
 		</select><br>
   		<label for="exampleInputFamily">Wat is de samenstelling van uw gezin?</label><br>
   		<label for="exampleInputFamilySum">Aantaallen van je gezin:</label><br>
-	 	<input type="text" name="family_sum" class="form-control" id="exampleInputName1" placeholder="Total number of the family"><br>
+	 	<input type="text" name="family_sum" class="form-control" id="exampleInputName1" placeholder="Total number of the family" required><br>
 <!--   		<label for="exampleInputFamily_age">Leeftijd:</label>
 	 	<input type="text" name="family_age" class="form-control" id="exampleInputName1" placeholder="Leeftijd"><br>
 	 	<label for="exampleInputGeslacht">Geslacht</label><br>
@@ -101,7 +100,7 @@
   		<input type="checkbox" id="inlineCheckbox11" name="other" value="other">Other</label><br>
 		
   		<label for="exampleInputDescribtion">Vertel wat over uw gezin:</label><br>
-  		<textarea class="form-control" rows="3" placeholder="Vertel wat over uw gezin" name="textarea" ></textarea><br>
+  		<textarea class="form-control" rows="3" placeholder="Vertel wat over uw gezin" name="textarea" required></textarea><br>
   		<label for="exampleInputProfile">Profil:</label><br>
     	<label class="radio_inline">
   		<input type="radio" name="profile_type"  value="buplic" checked >Buplic</label>

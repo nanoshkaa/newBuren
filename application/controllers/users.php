@@ -74,7 +74,7 @@ class Users extends CI_Controller{
             'min_length[8]'=>'the name must at least 8 letters',
             'matches[password]'=>'no match'
         ));
-            $this->form_validation->set_rules('textarea','textarea','required|alpha|min_length[3]|max_length[25]',array(
+            $this->form_validation->set_rules('textarea','textarea','required|alpha|min_length[3]',array(
             'required'=>'You must eneter data to field',
         ));
 
