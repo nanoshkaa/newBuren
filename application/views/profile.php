@@ -6,9 +6,9 @@
 </head>
 <body>
 <?php $this->load->view('nav_bar'); ?>
-	<header>
+	<!-- <header>
 		<h3>Hallo <?= ($this->session->userdata('name')); ?></h3>
-	</header>
+	</header> -->
 	<div class="nav nav-stacked nav-pills d-inline-block side_bar">
 		<ul class="nav nav-stacked nav-pills">
 			<form action="/users/filters" method="post">

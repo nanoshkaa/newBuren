@@ -124,13 +124,23 @@ button#send {
   display: inline-block;
 }
 .side_bar{
-  position: relative;
-  width: 20%;
-  height: auto;
+  width: 350px;
+  margin-top: 46px;
+  background-color: #f7f7f7;
+  height: 100%;
+  padding-left: 0px;
+  padding-right: 0px;
+  border-right: 1px solid #D7DADB;
+  padding-bottom: 30px;
+  position: fixed;
+  overflow: scroll;
+  display: inline-block;
 }
 .show_profiles{
-  width: 75%;
+  margin-left: 350px;
+  background: #fff;
+  padding: 40px;
+  padding-top: 55px;
   height: auto;
 }
-
     </style>

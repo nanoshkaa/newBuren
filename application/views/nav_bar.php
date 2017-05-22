@@ -1,6 +1,4 @@
-<div class="first_row">
-	  
-	   <div class=" navbar-collapse nav-menu" >
+<header class=" navbar-header nav-menu" >
 	          <ul class="nav nav-tabs nav-justified">
 	        	<li><a href="/users/index">Main</a></li>
 	        	<li><a href="/users/show_profile">Profiles</a></li>
@@ -14,6 +12,5 @@
 		        		        <?php }	else{ ?>
 		        <li><a href="/users/sign_out">Sign Out</a></li>
    <?php } ?>
-	          </ul>
-	    </div> 
-	</div>
+	          </ul> 
+</header>
