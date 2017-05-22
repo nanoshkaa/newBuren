@@ -8,7 +8,6 @@
 <body>
 <header>
 <?php $this->load->view('nav_bar'); ?>
-	<li><a href="/users/index">Main</a></li>
   <h3>Hallo <?= ($this->session->userdata('name'));
            ?></h3>
 	<h2 class="text-center">Multiculti dineren</h2>
