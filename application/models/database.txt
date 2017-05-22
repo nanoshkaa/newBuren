@@ -18,7 +18,7 @@ USE `n_buren` ;
 -- Table `n_buren`.`users`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `n_buren`.`users` (
-  `user_id` INT(11) NOT NULL AUTO_INCREMENT,
+  `id` INT(11) NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(255) NULL DEFAULT NULL,
   `email` VARCHAR(255) NULL DEFAULT NULL,
   `password` VARCHAR(45) NULL DEFAULT NULL,
@@ -30,7 +30,7 @@ CREATE TABLE IF NOT EXISTS `n_buren`.`users` (
   `profile_type` VARCHAR(45) NULL DEFAULT NULL,
   `created_at` DATETIME NULL DEFAULT NULL,
   `updated_at` DATETIME NULL DEFAULT NULL,
-  PRIMARY KEY (`user_id`))
+  PRIMARY KEY (`id`))
 ENGINE = InnoDB
 AUTO_INCREMENT = 5
 DEFAULT CHARACTER SET = utf8;
@@ -40,18 +40,18 @@ DEFAULT CHARACTER SET = utf8;
 -- Table `n_buren`.`address`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `n_buren`.`address` (
-  `addres_id` INT(11) NOT NULL AUTO_INCREMENT,
+  `id` INT(11) NOT NULL AUTO_INCREMENT,
   `street` VARCHAR(255) NULL DEFAULT NULL,
   `postcode` VARCHAR(255) NULL DEFAULT NULL,
   `city` VARCHAR(255) NULL DEFAULT NULL,
   `created_at` DATETIME NULL DEFAULT NULL,
   `updated_at` DATETIME NULL DEFAULT NULL,
-  `users_user_id` INT(11) NOT NULL,
-  PRIMARY KEY (`addres_id`),
-  INDEX `fk_address_users1_idx` (`users_user_id` ASC),
+  `users_id` INT(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  INDEX `fk_address_users1_idx` (`users_id` ASC),
   CONSTRAINT `fk_address_users1`
-    FOREIGN KEY (`users_user_id`)
-    REFERENCES `n_buren`.`users` (`user_id`)
+    FOREIGN KEY (`users_id`)
+    REFERENCES `n_buren`.`users` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
@@ -63,18 +63,18 @@ DEFAULT CHARACTER SET = utf8;
 -- Table `n_buren`.`family_info`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `n_buren`.`family_info` (
-  `family_id` INT(11) NOT NULL AUTO_INCREMENT,
+  `id` INT(11) NOT NULL AUTO_INCREMENT,
   `age` TINYINT(255) UNSIGNED NULL DEFAULT NULL,
   `gender` VARCHAR(45) NULL DEFAULT NULL,
   `total_n` TINYINT(255) UNSIGNED NULL DEFAULT NULL,
   `created_at` DATETIME NULL DEFAULT NULL,
   `updated_at` DATETIME NULL DEFAULT NULL,
-  `users_user_id` INT(11) NOT NULL,
-  PRIMARY KEY (`family_id`),
-  INDEX `fk_family_info_users_idx` (`users_user_id` ASC),
-  CONSTRAINT `fk_family_info_users`
-    FOREIGN KEY (`users_user_id`)
-    REFERENCES `n_buren`.`users` (`user_id`)
+  `users_id` INT(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  INDEX `fk_family_info_users1_idx` (`users_id` ASC),
+  CONSTRAINT `fk_family_info_users1`
+    FOREIGN KEY (`users_id`)
+    REFERENCES `n_buren`.`users` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
@@ -86,17 +86,17 @@ DEFAULT CHARACTER SET = utf8;
 -- Table `n_buren`.`fotos`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `n_buren`.`fotos` (
-  `foto_id` INT NOT NULL AUTO_INCREMENT,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `foto_profile` VARCHAR(255) NULL DEFAULT NULL,
   `foto_er` VARCHAR(255) NULL DEFAULT NULL,
   `created_at` DATETIME NULL DEFAULT NULL,
   `updated_at` DATETIME NULL DEFAULT NULL,
-  `users_user_id` INT(11) NOT NULL,
-  PRIMARY KEY (`foto_id`),
-  INDEX `fk_fotos_users1_idx` (`users_user_id` ASC),
+  `users_id` INT(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  INDEX `fk_fotos_users1_idx` (`users_id` ASC),
   CONSTRAINT `fk_fotos_users1`
-    FOREIGN KEY (`users_user_id`)
-    REFERENCES `n_buren`.`users` (`user_id`)
+    FOREIGN KEY (`users_id`)
+    REFERENCES `n_buren`.`users` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
@@ -107,7 +107,7 @@ DEFAULT CHARACTER SET = utf8;
 -- Table `n_buren`.`languages`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `n_buren`.`languages` (
-  `language_id` INT(11) NOT NULL AUTO_INCREMENT,
+  `id` INT(11) NOT NULL AUTO_INCREMENT,
   `english` VARCHAR(45) NULL DEFAULT NULL,
   `dutch` VARCHAR(45) NULL DEFAULT NULL,
   `arabic` VARCHAR(45) NULL DEFAULT NULL,
@@ -121,12 +121,12 @@ CREATE TABLE IF NOT EXISTS `n_buren`.`languages` (
   `other` VARCHAR(45) NULL DEFAULT NULL,
   `created_at` DATETIME NULL DEFAULT NULL,
   `updated_at` DATETIME NULL DEFAULT NULL,
-  `users_user_id` INT(11) NOT NULL,
-  PRIMARY KEY (`language_id`),
-  INDEX `fk_languages_users1_idx` (`users_user_id` ASC),
+  `users_id` INT(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  INDEX `fk_languages_users1_idx` (`users_id` ASC),
   CONSTRAINT `fk_languages_users1`
-    FOREIGN KEY (`users_user_id`)
-    REFERENCES `n_buren`.`users` (`user_id`)
+    FOREIGN KEY (`users_id`)
+    REFERENCES `n_buren`.`users` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
@@ -138,16 +138,16 @@ DEFAULT CHARACTER SET = utf8;
 -- Table `n_buren`.`messages`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `n_buren`.`messages` (
-  `message_id` INT(11) NOT NULL AUTO_INCREMENT,
+  `id` INT(11) NOT NULL AUTO_INCREMENT,
   `message` VARCHAR(255) NULL DEFAULT NULL,
   `created_at` DATETIME NULL DEFAULT NULL,
   `updated_at` DATETIME NULL DEFAULT NULL,
-  `users_user_id` INT(11) NOT NULL,
-  PRIMARY KEY (`message_id`, `users_user_id`),
-  INDEX `fk_messages_users1_idx` (`users_user_id` ASC),
+  `users_id` INT(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  INDEX `fk_messages_users1_idx` (`users_id` ASC),
   CONSTRAINT `fk_messages_users1`
-    FOREIGN KEY (`users_user_id`)
-    REFERENCES `n_buren`.`users` (`user_id`)
+    FOREIGN KEY (`users_id`)
+    REFERENCES `n_buren`.`users` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
@@ -158,19 +158,19 @@ DEFAULT CHARACTER SET = utf8;
 -- Table `n_buren`.`situation`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `n_buren`.`situation` (
-  `situation_id` INT(11) NOT NULL AUTO_INCREMENT,
+  `id` INT(11) NOT NULL AUTO_INCREMENT,
   `guest` VARCHAR(45) NULL DEFAULT NULL,
   `host` VARCHAR(45) NULL DEFAULT NULL,
   `n_guests` TINYINT(255) UNSIGNED NULL DEFAULT NULL,
   `nederlander` VARCHAR(255) NULL DEFAULT NULL,
   `created_at` DATETIME NULL DEFAULT NULL,
   `updated_at` DATETIME NULL DEFAULT NULL,
-  `users_user_id` INT(11) NOT NULL,
-  PRIMARY KEY (`situation_id`),
-  INDEX `fk_situation_users1_idx` (`users_user_id` ASC),
+  `users_id` INT(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  INDEX `fk_situation_users1_idx` (`users_id` ASC),
   CONSTRAINT `fk_situation_users1`
-    FOREIGN KEY (`users_user_id`)
-    REFERENCES `n_buren`.`users` (`user_id`)
+    FOREIGN KEY (`users_id`)
+    REFERENCES `n_buren`.`users` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
