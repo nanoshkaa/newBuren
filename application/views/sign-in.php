@@ -5,7 +5,7 @@
 	<title>Nieuve Buren</title>
 </head>
 <body>
-	<li><a href="/users/index">Main</a></li>
+	<?php $this->load->view('nav_bar'); ?>
 	<div>
 		<div id="content_login" class="col-md-6">
 		<?php 

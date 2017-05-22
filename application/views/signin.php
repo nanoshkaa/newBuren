@@ -5,6 +5,7 @@
 	<title>Nieuve Buren</title>
 </head>
 <body>
+	<?php $this->load->view('nav_bar'); ?>
 	<header>
 	<h2 class="text-center">Multiculti dineren</h2>
 	<p class="text-center">Begin met multiculti dineren door je hieronder aan te melden. Geef aan of je graag te gast wilt zijn of dat je als host een diner wilt organiseren.</p>
