@@ -27,7 +27,7 @@
 	    <li><span class="nav-label">Sponsors</span></li>
 	    <li><span class="nav-label">Mensen Achter NB</span></li>
 	    <li><a href="/users/faq"> <span class="nav-label">FAQ</span></a></li>
-		<li><a href="/users/contact">Contact</a></li>
+	    <li><a href="/users/contact"> <span class="nav-label">Contact</span></a></li>
 	  </ul>
 	</nav>
 	<section id="header" class="header">
