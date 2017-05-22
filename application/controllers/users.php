@@ -112,8 +112,8 @@ class Users extends CI_Controller{
                 $this->user->insert_situation($data);
                 $this->user->insert_lang($data);
                 $this->user->insert_family($data);
-                $this->load->view('main.php');
-
+                $all_users = $this->user->get_all_user();
+				$this->load->view('profile',['all_users'=> $all_users]);		
             }
         }
 
@@ -238,7 +238,8 @@ public function sign_in(){
         $this->session->set_userdata($user);
         // var_dump($user_data);
         // die();
-		$this->load->view('main.php');
+		$all_users = $this->user->get_all_user();
+		$this->load->view('profile',['all_users'=> $all_users]);
 
 	}
 	else
