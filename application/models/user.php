@@ -24,13 +24,38 @@ class user extends CI_Model{
 }
 	public function get_all_user(){
 		$this->db->select('*');
-		$this->db->from('users, situation , family_info , fotos');
+		$this->db->from('users, fotos');
 		$this->db->where('fotos.users_user_id = user_id');
+		$query1 = $this->db->get()->result_array(); 
+		
+		if (!empty($query1)) {
+		$this->db->select('*');
+		$this->db->from('users, situation, family_info, fotos');
+		$this->db->where('fotos.users_user_id = user_id');
+		$this->db->where('situation.users_user_id = user_id');
+		$this->db->where('family_info.users_user_id = user_id');
+		$query = $this->db->get(); ;
+		return $query->result_array();
+		//return $this->db->query($query, $values)->result_array();
+	}
+		else{
+		$this->db->select('*');
+		$this->db->from('users, situation, family_info');
 		$this->db->where('situation.users_user_id = user_id');
 		$this->db->where('family_info.users_user_id = user_id');
 		$query = $this->db->get(); ;
 		
 		return $query->result_array();
+		
+		}
+		// $this->db->select('*');
+		// $this->db->from('users, situation , family_info , fotos');
+		// $this->db->where('fotos.users_user_id = user_id');
+		// $this->db->where('situation.users_user_id = user_id');
+		// $this->db->where('family_info.users_user_id = user_id');
+		// $query = $this->db->get(); ;
+		
+		// return $query->result_array();
 	}
 	public function filter($data){
 		// var_dump($data);
