@@ -36,17 +36,17 @@
         <?php echo $user['total_n']; ?><br>
         <?php echo $user['location']; ?><br>
         <?php echo $user['city']; ?><br>
-        <?php if (isset($user['english'])) echo $user[$i]['english']; ?><br>
-        <?php if (isset($user['nederlands'])) echo $user[$i]['nederlands'];?>
-        <?php if (isset($user['turquish'])) echo $user[$i]['turquish']; ?>
-        <?php if (isset($user['polsk'])) echo $user[$i]['polsk']; ?>
-        <?php if (isset($user['arabic'])) echo $user[$i]['arabic']; ?>
-        <?php if (isset($user['russian'])) echo $user[$i]['russian']; ?>
-        <?php if (isset($user['tijrijna'])) echo $user[$i]['tijrijna']; ?>
-        <?php if (isset($user['faresi'])) echo $user[$i]['faresi']; ?>  
-        <?php if (isset($user['spanish'])) echo $user[$i]['spanish']; ?>
-        <?php if (isset($user['french'])) echo $user[$i]['french']; ?>
-        <?php if (isset($user['other'])) echo $user[$i]['other']; ?>
+        <?php if (isset($user['english'])) echo $user['english']; ?><br>
+        <?php if (isset($user['nederlands'])) echo $user['nederlands'];?>
+        <?php if (isset($user['turquish'])) echo $user['turquish']; ?>
+        <?php if (isset($user['polsk'])) echo $user['polsk']; ?>
+        <?php if (isset($user['arabic'])) echo $user['arabic']; ?>
+        <?php if (isset($user['russian'])) echo $user['russian']; ?>
+        <?php if (isset($user['tijrijna'])) echo $user['tijrijna']; ?>
+        <?php if (isset($user['faresi'])) echo $user['faresi']; ?>  
+        <?php if (isset($user['spanish'])) echo $user['spanish']; ?>
+        <?php if (isset($user['french'])) echo $user['french']; ?>
+        <?php if (isset($user['other'])) echo $user['other']; ?>
         <?php if (isset($user['foto_profile'])) { ?>
         <img class="profile_pic img-circle img-responsive" src="/.<?php echo $user['foto_profile']; ?>">
       <?php }} ?>
