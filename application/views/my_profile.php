@@ -10,17 +10,7 @@
   <div>
     <p>Hallo <?= ($this->session->userdata('name')); ?></p>
 	</div>
-	<div id="errors">
-        <?php if ($errors) {
-                //$errors = $this->session->flashdata('errors');
-                    for($i=0; $i < count($errors); $i++) {
-                        echo  $errors[$i]. "<br>";
-                    }
-              }
-            if ($this->session->flashdata('validation_errors')) {
-                  echo $this->session->flashdata('validation_errors');
-              } ?>
-  </div>     
+	
   <div class="form-group">
       <?php 
       for ($i=0; $i < count($user); $i++) { ?>
@@ -44,6 +34,17 @@
         <?php echo $user[$i]['host']; ?><br>
         
       <?php } ?>
+      <div id="errors">
+        <?php if ($errors) {
+                //$errors = $this->session->flashdata('errors');
+                    for($i=0; $i < count($errors); $i++) {
+                        echo  $errors[$i]. "<br>";
+                    }
+              }
+            if ($this->session->flashdata('validation_errors')) {
+                  echo $this->session->flashdata('validation_errors');
+              } ?>
+  </div>     
   </div>
       <?php if (empty($user[0]['foto_profile'])) { ?>
     <label for="exampleInputFile">Voeg foto toe</label>

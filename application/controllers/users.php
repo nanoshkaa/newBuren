@@ -128,18 +128,18 @@ class Users extends CI_Controller{
 		    if($check !== false) {
 		        $uploadOk = 1;
 		    } else {
-		        $errors[] = "<p>File is not an image.</p>";
+		        $errors[] = "<p style='color: red'>File is not an image.</p>";
 		        $uploadOk = 0;
 		    }
 			// Check if file already exists
 			if (file_exists($target_file)) {
-			    $errors[] = "<p>Sorry, file already exists.</p>";
+			    $errors[] = "<p style='color: red'>Sorry, file already exists.</p>";
 			    $uploadOk = 0;
 			}
 			// Allow certain file formats
 			if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "gif" ) {
 				// echo "inside the not image validation";
-			    $errors[] = "<p>Sorry, only JPG, JPEG, PNG & GIF files are allowed.</p>";
+			    $errors[] = "<p style='color: red'>Sorry, only JPG, JPEG, PNG & GIF files are allowed.</p>";
 			    $uploadOk = 0;
 			}
 			// Check if $uploadOk is set to 0 by an error
@@ -174,7 +174,7 @@ class Users extends CI_Controller{
 			    }
 			}
 		} else {
-			$errors[] = '<p style="color: red">A image file is required</p>';
+			$errors[] = '<p style="color: red">An image file is required</p>';
 				//$this->session->set_flashdata('errors', $errors);
 				$user_id = $this->session->userdata('user_id');
 				$this->load->model('User');
