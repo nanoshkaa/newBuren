@@ -6,29 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <style>
     @import url(http://fonts.googleapis.com/css?family=Open+Sans:300,800);
-
 body {
-
   font-size: 1.5em;
-  background-color: white !important;
+  background-color: white;
 }
-
 .content {
   width: 80%;
   padding: 20px;
   margin: 0 auto;
   padding: 0 60px 0 0;
 }
-
 .centerplease {
   margin: 0 auto;
   max-width: auto;
   font-size: 40px;
+  color: #f3c59f;
 }
-
 .question {
   position: relative;
-  background: #232F3E;
+  background: #f3c59f;
   margin: 0;
   padding: 10px 10px 10px 50px;
   display: block;
@@ -36,7 +32,6 @@ body {
   cursor: pointer;
   color: white;
 }
-
 .answers {
   background: white;
   padding: 0px 15px;
@@ -51,13 +46,11 @@ body {
   -o-transition: .7s ease;
   transition: .7s ease;
 }
-
 .questions:checked ~ .answers{
   height: auto;
   opacity: 1;
   padding: 15px;
 }
-
 .plus {
   position: absolute;
   margin-left: 10px;
@@ -75,16 +68,13 @@ body {
   -o-transition: .3s ease;
   transition: .3s ease;
   color: white;
-
 }
-
 .questions:checked ~ .plus {
   -webkit-transform: rotate(45deg);
   -moz-transform: rotate(45deg);
   -o-transform: rotate(45deg);
   transform: rotate(45deg);
 }
-
 .questions {
   display: none;
 }

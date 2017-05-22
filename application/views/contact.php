@@ -1,4 +1,3 @@
-
 <html>
   <head>
     <title>Contact</title>
@@ -7,9 +6,7 @@
   <body>
   <?php $this->load->view('nav_bar'); ?>
     <div id="preloader"><div id="spinner"></div></div>
-     
     <div id="contact_form_bg">
-
   <header>
       <h1>Hallo</h1>
   </header>

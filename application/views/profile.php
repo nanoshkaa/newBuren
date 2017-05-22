@@ -6,10 +6,8 @@
 </head>
 <body>
 <?php $this->load->view('nav_bar'); ?>
-	<!-- <header>
-		<h3>Hallo <?= ($this->session->userdata('name')); ?></h3>
-	</header> -->
 	<div class="nav nav-stacked nav-pills d-inline-block side_bar">
+		<h3>Hallo <?= ($this->session->userdata('name')); ?></h3><br>
 		<ul class="nav nav-stacked nav-pills">
 			<form action="/users/filters" method="post">
 				<li role="presentation"><label for="exampleInputTaal">Zoek als gast of als host?</label></li>

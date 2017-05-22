@@ -55,7 +55,7 @@ body * {
 }
 #contact_form_bg{
   padding: 40px;
-  background-color: #C8D2D9;
+  background-color: rgba(255, 152, 0, 0.35);
   
 }
 header h1 {
@@ -63,7 +63,7 @@ header h1 {
   margin: 0 auto;
   text-align: center;
   border-bottom: 2px solid #c3c3c3;
-  background-color: #f7f7f7;
+  background-color: rgba(255, 152, 0, 0.35);
   box-shadow: 0px 0px 100px rgba(0, 0, 0, 0.05);
   color: #555555;
   font-weight: 300;
@@ -85,7 +85,7 @@ section {
   margin-top: 10px;
   border-left: 10px solid transparent;
   border-right: 10px solid transparent;
-  border-bottom: 10px solid #f7f7f7;
+  border-bottom: 10px solid rgba(255, 152, 0, 0.35);
 }
 form#contact {
   margin: 0 auto;
@@ -93,13 +93,13 @@ form#contact {
   border-bottom: 2px solid #c3c3c3;
   width: 300px;
   padding: 20px;
-  background-color: #f7f7f7;
+  background-color: rgba(255, 152, 0, 0.35);
   margin-bottom: 20px;
 }
 .form-control {
   box-shadow: none;
   border-radius: 0;
-  background-color: #f7f7f7;
+  background-color: rgba(255, 152, 0, 0.35);
   outline: none;
   border: none;
   box-shadow: none !important;
@@ -112,7 +112,7 @@ textarea#message {
 }
 button#send {
   text-transform: uppercase;
-  border-bottom: 2px solid #c3c3c3;
+  border-bottom: 2px solid rgba(255, 152, 0, 0.35);
   margin-top: 20px;
   letter-spacing: 4px;
 }
@@ -126,11 +126,11 @@ button#send {
 .side_bar{
   width: 350px;
   margin-top: 46px;
-  background-color: #f7f7f7;
+  background-color: rgba(255, 152, 0, 0.35);
   height: 100%;
   padding-left: 0px;
   padding-right: 0px;
-  border-right: 1px solid #D7DADB;
+  border-right: 1px solid rgba(255, 152, 0, 0.35);
   padding-bottom: 30px;
   position: fixed;
   overflow: scroll;
@@ -138,7 +138,7 @@ button#send {
 }
 .show_profiles{
   margin-left: 350px;
-  background: #fff;
+  background: rgba(255, 152, 0, 0.35);
   padding: 40px;
   padding-top: 55px;
   height: auto;

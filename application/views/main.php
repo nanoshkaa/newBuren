@@ -31,7 +31,7 @@
 	  </ul>
 	</nav>
 	<section id="header" class="header">
-		<img  src="../assets/image/main_pic/15DINNERJP1-master675.jpg">
+		<img id="main_pic" src="../assets/image/main_pic/15DINNERJP1-master675.jpg">
 		<h1 id="heading">Multiculti dineren</h1>
 	</section>
 	<section class="content">
@@ -43,7 +43,7 @@
         <h2>Volg ons op Facebook</h2>
         <a target="_blank" href="#" class="social-icon">
         <i class="fa fa-facebook"></i></a>
-        <?php $this->load->view('footer'); ?>
+        <!-- <?php $this->load->view('footer'); ?> -->
 	</div>
 	<script src="/assets/javascript/index.js"></script>
 	</body>

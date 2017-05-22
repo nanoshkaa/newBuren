@@ -222,10 +222,10 @@ nav.in li {
 
 .header {
   background-size: cover;
-  position: relative;
   width: 100%;
   min-height: 70%;
   top: 0px;
+  margin-bottom: 30px;
 }
 .header img {
   width: 100%;
@@ -307,14 +307,13 @@ h2 {
     margin-right: 30px;
 }
 .fa-facebook {
-    padding:10px 14px;
-    -o-transition:.5s;
-    -ms-transition:.5s;
-    -moz-transition:.5s;
-    -webkit-transition:.5s;
-    transition: .5s;
+    padding:10px 14px 30px 10px;
     background-color: white;
 }
 .fa-facebook:hover {
     background-color: #3d5b99;
+    padding:10px 14px 30px 10px;
 }
+
+  
+

@@ -1,4 +1,4 @@
-<header class=" navbar-header nav-menu" >
+<header class=" navbar navbar-inverse nav-menu" >
 	          <ul class="nav nav-tabs nav-justified">
 	        	<li><a href="/users/index">Main</a></li>
 	        	<li><a href="/users/show_profile">Profiles</a></li>
