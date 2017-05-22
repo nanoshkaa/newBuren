@@ -14,23 +14,11 @@
 </head>
 
 	<body>
-<!-- 	<div class="first_row"> -->
 	  <div id="nav-trigger" class="nav-trigger open">
 	    <span class="line"></span>
 	    <span class="line"></span>
 	    <span class="line"></span>
 	  </div>
-	   <!-- <div class=" navbar-collapse" >
-	          <ul class="sign">
-	            <li><a href="/users/show_sign_in">Sign In</a></li>
-		        <li><a href="/users/show_sign_up">Sign Up</a></li>
-		        <li><a href="/users/sign_out">Sign Out</a></li>
-		        <li><a href="/users/show_my_profile">My Profile</a></li>
-		        <li><a href="/users/faq">FAQ</a></li>
-		        <li><a href="/users/contact">Contact</a></li>
-	          </ul>
-	    </div><!-- /.navbar-collapse --> 
-<!-- 	</div> -->
 	<nav id="nav" class="out">
 	  <ul>
 	    <li><span class="nav-label">Testimonials</span></li>
@@ -38,6 +26,8 @@
 	    <li><span class="nav-label">Events</span></li>
 	    <li><span class="nav-label">Sponsors</span></li>
 	    <li><span class="nav-label">Mensen Achter NB</span></li>
+	    <li><a href="/users/faq"> <span class="nav-label">FAQ</span></a></li>
+		<li><a href="/users/contact">Contact</a></li>
 	  </ul>
 	</nav>
 	<section id="header" class="header">
