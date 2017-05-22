@@ -32,9 +32,10 @@
 	<div class="d-inline-block show_profiles">  
 		<?php
 		  if (isset($all_users)) {
-			for ($i=0; $i < count($all_users); $i++) { 
+			for ($i=0; $i < count($all_users); $i++) { if ($all_users[$i] ['foto_profile']) {
+				
 		?>
-			<img class="profile_pic img-circle img-responsive d-inline-block" src=".<?php echo $all_users[$i] ['foto_profile']; ?>">
+			<img class="profile_pic img-circle img-responsive d-inline-block" src=".<?php echo $all_users[$i]['foto_profile']; }?>">
 			<a class="d-inline-block" href="/Users/show_user_profile/<?= $all_users[$i]['user_id'] ?>"><?php echo $all_users[$i]['name']; ?></a><br>
 			<p><?php echo $all_users[$i]['describtion']; ?></p>
 			<p><?php echo $all_users[$i] ['host']; ?></p>
