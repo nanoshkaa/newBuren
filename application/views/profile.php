@@ -5,7 +5,9 @@
 	<title>Nieuve Buren members</title>
 </head>
 <body>
-	<li><a href="/users/index">Main</a></li>
+<?php $this->load->view('nav_bar'); ?>
+
+	
 	<h4>Schrijf jouw gezin ook in! Klik hier om eenvoudig aan te melden.</h4>
 <?php
 	if (isset($all_users)) {

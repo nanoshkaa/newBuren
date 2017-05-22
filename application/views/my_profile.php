@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<?php $this->load->view('master'); ?>
+  <?php $this->load->view('master'); ?>
+	
 	<title>Nieuve Buren</title>
 </head>
 <body>
 <header>
+<?php $this->load->view('nav_bar'); ?>
 	<li><a href="/users/index">Main</a></li>
   <h3>Hallo <?= ($this->session->userdata('name'));
            ?></h3>
