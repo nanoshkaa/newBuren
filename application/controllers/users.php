@@ -23,8 +23,10 @@ class Users extends CI_Controller{
 	}
 
 	public function show_my_profile (){	 
-
-		$this->load->view('my_profile');
+		$user_id = $this->session->userdata('user_id');
+		$this->load->model('User');
+		$user = $this->User->show_user($user_id); 
+		$this->load->view('my_profile.php',['user'=> $user]);
 	}
 	public function show_user_profile($id){
 		$this->load->model('User');
@@ -101,17 +103,16 @@ class Users extends CI_Controller{
                 $user_info = $this->user->get_user($data);
                 $user = array(
                     'name'=>$user_info['name'],
-                'email'=>$user_info['email'],
-                'user_id'=>$user_info['user_id'],
-                'logged_in'=> TRUE
+                	'email'=>$user_info['email'],
+                	'user_id'=>$user_info['user_id'],
+                	'logged_in'=> TRUE
                 );
                 $this->session->set_userdata($user);
                 $this->user->insert_address($data);
                 $this->user->insert_situation($data);
                 $this->user->insert_lang($data);
                 $this->user->insert_family($data);
-
-                $this->load->view('my_profile');
+                $this->load->view('main.php');
 
             }
         }
@@ -233,7 +234,7 @@ public function sign_in(){
         $this->session->set_userdata($user);
         // var_dump($user_data);
         // die();
-		$this->load->view('my_profile');
+		$this->load->view('main.php');
 
 	}
 	else

@@ -14,10 +14,10 @@
 			for ($i=0; $i < count($all_users); $i++) { 
 				echo $all_users[$i] ['host']."<br>";
 				 ?>
-				<a href="/Users/show_user_profile/<?= $all_users[$i]['user_id'] ?>"><?php echo $all_users[$i] ['name']; ?></a><br>
-				<?php echo $all_users[$i] ['describtion']; ?></a><br>
-				<?php echo $all_users[$i] ['total_n']; ?></a><br>
-				<?php echo $all_users[$i] ['location']; ?></a><br>
+				<a href="/Users/show_user_profile/<?= $all_users[$i]['user_id'] ?>"><?php echo $all_users[$i]['name']; ?></a><br>
+				<?php echo $all_users[$i]['describtion']; ?></a><br>
+				<?php echo $all_users[$i]['n_guests']; ?></a><br>
+				<?php echo $all_users[$i]['location']; ?></a><br>
 				<img class="profile_pic img-circle img-responsive" src=".<?php echo $all_users[$i] ['foto_profile']; ?>">
 
 

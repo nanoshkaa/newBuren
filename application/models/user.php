@@ -80,8 +80,17 @@ class user extends CI_Model{
 		return $this->db->query($query)->row_array();
 	}
 	public function show_user($id) {
-		$query = "SELECT * FROM users Where user_id =? ";
-		$values = [$id];
+		$this->db->select('*');
+		$this->db->from('users, situation, family_info, address, languages, fotos');
+		$this->db->where('user_id' , $id);
+		$this->db->where('fotos.users_user_id = user_id');
+		$this->db->where('situation.users_user_id = user_id');
+		$this->db->where('languages.users_user_id = user_id');
+		$this->db->where('address.users_user_id = user_id');
+		$this->db->where('family_info.users_user_id = user_id');
+		$query = $this->db->get(); ;
+		
+		return $query->result_array();
 		return $this->db->query($query, $values)->result_array();
 	}
 	public function insert_user($post){
@@ -146,11 +155,9 @@ class user extends CI_Model{
 		if (isset($post['nederlands'])) {
 			$this->db->set('dutch',$post['nederlands']);
 			}
-
-			if (isset($post['turquish'])) {
-				$this->db->set('turquish',$post['turquish']);
+		if (isset($post['turquish'])) {
+			$this->db->set('turquish',$post['turquish']);
 			}
-
         if (isset($post['polsk'])) {
 			$this->db->set('polsk',$post['polsk']);
 			}
