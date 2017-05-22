@@ -52,7 +52,7 @@ class Users extends CI_Controller{
 	}
         public function sign_up(){
 
-          $this->form_validation->set_rules('name','name','required|alpha|min_length[3]|max_length[25]|trim',array(
+          $this->form_validation->set_rules('name','name','required|alpha|min_length[3]|max_length[25]',array(
             'required'=>'You must eneter data to field',
             'alpha'=>'please enter only letters',
             'min_length[3]'=>'the name must at least 3 letters'
@@ -73,6 +73,9 @@ class Users extends CI_Controller{
             'required'=>'You must eneter data to field',
             'min_length[8]'=>'the name must at least 8 letters',
             'matches[password]'=>'no match'
+        ));
+            $this->form_validation->set_rules('textarea','textarea','required|alpha|min_length[3]|max_length[25]',array(
+            'required'=>'You must eneter data to field',
         ));
 
 
