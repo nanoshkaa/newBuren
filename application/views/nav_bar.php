@@ -2,7 +2,7 @@
 	          <ul class="nav nav-tabs nav-justified">
 	        	<li><a href="/users/index">Main</a></li>
 	        	<li><a href="/users/show_profile">Profiles</a></li>
-		        <li><a href="/users/faq">Events</a></li>
+		        <li><a href="/users/events">Events</a></li>
 		        <li><a href="/users/faq">FAQ</a></li>
 		        <li><a href="/users/contact">Contact</a></li>
 		        <?php if (empty($this->session->userdata('logged_in'))) { ?>
