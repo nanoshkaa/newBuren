@@ -276,4 +276,7 @@ button#send {
   padding:20px;
   font-size:16px;
 }
+.chat{
+  text-align: center;
+}
     </style>
