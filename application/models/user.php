@@ -254,9 +254,9 @@ class user extends CI_Model{
 
 	public function update_pic($post,$img) {
 		$user_id = $this->session->userdata('users_user_id');
-       	$this->db->set('foto_profile', $img);
-		$this->db->where('users_user_id', $user_id);
-		 $query = $this->db->update('fotos');
+		$query = "UPDATE fotos SET foto_profile = ? WHERE users_user_id = ?";
+       $values = [$img, $this->session->userdata('user_id')];
+       $this->db->query($query, $values);
 
 
      }
