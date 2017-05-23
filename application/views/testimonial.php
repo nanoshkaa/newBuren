@@ -6,9 +6,11 @@
 </head>
 <body>
 	<?php $this->load->view('nav_bar'); ?>
-	<h2>Multiculti dineren</h2>
-	<img src="../assets/image/main_pic/Capture.png" alt="NieuweBurenLogo" width="175">
-    <p>Begin met multiculti dineren door hieronder aan te geven of je graag te gast wilt zijn of dat je als host een diner wilt organiseren.</p>
+	<div class="chat">
+		<h2>Multiculti dineren</h2>
+		<img src="../assets/image/main_pic/Capture.png" alt="NieuweBurenLogo" width="175">
+	    <h5>Begin met multiculti dineren door hieronder aan te geven of je graag te gast wilt zijn of dat je als host een diner wilt organiseren.</h5>
+    </div>
     <div class="accordian">
 		  <ul>
 		    <li>

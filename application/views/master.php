@@ -224,7 +224,7 @@ button#send {
 }
 .show_profiles{
   margin-left: 350px;
-  background: rgba(255, 152, 0, 0.35);
+  background: white;
   padding: 40px;
   padding-top: 55px;
   height: auto;
