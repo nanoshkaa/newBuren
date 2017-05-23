@@ -141,7 +141,7 @@ body * {
 }
 #contact_form_bg{
   padding: 40px;
-  background-color: rgba(255, 152, 0, 0.35);
+  background-color: white;
   
 }
 header h1 {
@@ -149,7 +149,7 @@ header h1 {
   margin: 0 auto;
   text-align: center;
   border-bottom: 2px solid #c3c3c3;
-  background-color: rgba(255, 152, 0, 0.35);
+  background-color: #f1f1f1;
   box-shadow: 0px 0px 100px rgba(0, 0, 0, 0.05);
   color: #555555;
   font-weight: 300;
@@ -176,16 +176,16 @@ section {
 form#contact {
   margin: 0 auto;
   text-align: center;
-  border-bottom: 2px solid #c3c3c3;
+  border-bottom: 2px solid #f1f1f1;
   width: 300px;
   padding: 20px;
-  background-color: rgba(255, 152, 0, 0.35);
+  background-color: #f1f1f1;
   margin-bottom: 20px;
 }
 .form-control {
   box-shadow: none;
   border-radius: 0;
-  background-color: rgba(255, 152, 0, 0.35);
+  background-color: white;
   outline: none;
   border: none;
   box-shadow: none !important;

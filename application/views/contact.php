@@ -8,7 +8,7 @@
     <div id="preloader"><div id="spinner"></div></div>
     <div id="contact_form_bg">
     <header>
-        <h1>Hallo</h1>
+        <h1>Contact met ons</h1>
     </header>
     <section>
       <div class="arrow-up"></div>
@@ -25,7 +25,7 @@
         </div>
         <div class="form-group">  
           <div class="col-sm-12">
-            <textarea class="form-control" id="message" name="message" placeholder="MENSAJE"></textarea>
+            <textarea class="form-control" id="message" name="message" placeholder="MESSAGE"></textarea>
           </div>
         </div>
           <button type="submit" id="send" name="send" class="btn btn-block">Stuur</button>
