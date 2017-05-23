@@ -18,7 +18,10 @@
         <h4>Aantaal van gezin: </h4><p><?php echo $user[$i]['total_n']; ?></p>
         <h4>Heeft locatie: </h4><p><?php echo $user[$i]['location']; ?></p>
         <h4>Staat: </h4><p><?php echo $user[$i]['city']; ?></p>
-        <h4><?php echo $user[$i]['host']; ?></h4>
+        <h4><?php if ($user[$i] ['host']) {
+			 echo $user[$i] ['host'];} ?></h4>
+			 <h4><?php if ($user[$i] ['guest']) {
+			 echo $user[$i] ['guest'];} ?></h4>
         <h4>Talen: </h4>
         <?php if (isset($user[$i]['english'])) echo $user[$i]['english'].","; ?>
         <?php if (isset($user[$i]['nederlands'])) echo $user[$i]['nederlands'].",";?>

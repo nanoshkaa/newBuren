@@ -35,15 +35,15 @@
 				
 		?>
 			<img class="profile_pic img-circle img-responsive d-inline-block" src=".<?php echo $all_users[$i]['foto_profile']; }?>">
-			<a class="d-inline-block" href="/Users/show_user_profile/<?= $all_users[$i]['user_id'] ?>"><?php echo $all_users[$i]['name']; ?></a><br>
+			<a class="d-inline-block" href="/Users/show_user_profile/<?= $all_users[$i]['user_id'] ?>"><h4><?php echo $all_users[$i]['name']; ?></h4></a>
 			<p><?php echo $all_users[$i]['describtion']; ?></p>
-			<p><?php if ($all_users[$i] ['host']) {
-			 echo $all_users[$i] ['host'];} ?></p>
-			 <p><?php if ($all_users[$i] ['guest']) {
-			 echo $all_users[$i] ['guest'];} ?></p>
-			<p>Aantaal van gezin: <?php echo $all_users[$i]['total_n']; ?></p>
-			<p>Aantaal van gasten: <?php echo $all_users[$i]['n_guests']; ?></p>
-			<p>Heeft locatie: <?php echo $all_users[$i]['location']; ?></p>
+			<h4><?php if ($all_users[$i] ['host']) {
+			 echo $all_users[$i] ['host'];} ?></h4>
+			 <h4><?php if ($all_users[$i] ['guest']) {
+			 echo $all_users[$i] ['guest'];} ?></h4>
+			<h4>Aantaal van gezin: </h4><p><?php echo $all_users[$i]['total_n']; ?></p>
+			<h4>Aantaal van gasten: </h4><p><?php echo $all_users[$i]['n_guests']; ?></p>
+			<h4>Heeft locatie: </h4><p><?php echo $all_users[$i]['location']; ?></p>
 			
 		<?php }}
 	      if (isset($filters)) {
