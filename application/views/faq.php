@@ -37,13 +37,69 @@
   </div>
 </div>
 <div>
+  <input type="checkbox" id="question3" name="q" class="questions">
+  <div class="plus">+</div>
+    <label for="question3" class="question">Kan ik host en/of gast zijn ?</label>
+  <div class="answers">choose from go to our "What's in the?" page.
+  </div>
+</div>
+<div>
+  <input type="checkbox" id="question3" name="q" class="questions">
+  <div class="plus">+</div>
+    <label for="question3" class="question">Kan ik meerdere keren mee doen?</label>
+  <div class="answers">choose from go to our "What's in the?" page.
+  </div>
+</div>
+<div>
+  <input type="checkbox" id="question3" name="q" class="questions">
+  <div class="plus">+</div>
+    <label for="question3" class="question">Waar moet ik opletten als ik een etentje organiseer?</label>
+  <div class="answers">choose from go to our "What's in the?" page.
+  </div>
+</div>
+<div>
+  <input type="checkbox" id="question3" name="q" class="questions">
+  <div class="plus">+</div>
+    <label for="question3" class="question">Moet ik vloeiend Engels en/of Nederlands kunnen spreken?</label>
+  <div class="answers">choose from go to our "What's in the?" page.
+  </div>
+</div>
+<div>
+  <input type="checkbox" id="question3" name="q" class="questions">
+  <div class="plus">+</div>
+    <label for="question3" class="question">Wie zit er achter Nieuwe Buren?</label>
+  <div class="answers">choose from go to our "What's in the?" page.
+  </div>
+</div>
+<div>
+  <input type="checkbox" id="question3" name="q" class="questions">
+  <div class="plus">+</div>
+    <label for="question3" class="question">Zijn mijn gegevens veilig?</label>
+  <div class="answers">choose from go to our "What's in the?" page.
+  </div>
+</div>
+<div>
+  <input type="checkbox" id="question3" name="q" class="questions">
+  <div class="plus">+</div>
+    <label for="question3" class="question">Hoe is Nieuwe Buren gefinancierd?</label>
+  <div class="answers">choose from go to our "What's in the?" page.
+  </div>
+</div>
+<div>
+  <input type="checkbox" id="question3" name="q" class="questions">
+  <div class="plus">+</div>
+    <label for="question3" class="question">Wat een leuk initiatief. Kan ik helpen?</label>
+  <div class="answers">choose from go to our "What's in the?" page.
+  </div>
+</div>
+<div>
   <input type="checkbox" id="question4" name="q" class="questions">
   <div class="plus">+</div>
   <label for="question4" class="question">
-   Have another question for us?
+   Heeft u meer vragen?
   </label>
   <div class="answers">
-       <p>Send us a message on our <a href="/users/contact">Contact page</a></p>
+       <p>Stuur onz u vragen op onz <a href="/users/contact">Contact page</a></p>
   </div>
 </div>
 </div>
