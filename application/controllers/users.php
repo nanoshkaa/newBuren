@@ -50,6 +50,23 @@ class Users extends CI_Controller{
 	public function contact (){
 		$this->load->view('contact.php');
 	}
+	public function send_contact (){
+	$to = "amh_3bd@hotmail.com"; // this is your Email address
+    $from = $_POST['email']; // this is the sender's Email address
+    $name = $_POST['name'];
+   // $last_name = $_POST['last_name'];
+    //$subject = "Form submission";
+   // $subject2 = "Copy of your form submission";
+    $message = $_POST['message'];
+    $message2 = "Here is a copy of your message " .$_POST['message'];
+    $headers = "From:" . $from;
+    $headers2 = "From:" . $to;
+    mail($to,$message,$headers);
+    mail($from,$message2,$headers2); // sends a copy of the message to the sender
+    echo "Mail Sent. Thank you " . $name . ", we will contact you shortly.";
+    // You can also use header('Location: thank_you.php'); to redirect to another page.
+		$this->load->view('contact.php');
+	}
 	public function filters (){
 		 $ddd = $this->input->post();
 		 $this->load->model('user');
