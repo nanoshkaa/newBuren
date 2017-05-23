@@ -19,9 +19,6 @@
             <div class="member_list">
                <ul class="list-unstyled">
                   <li class="left clearfix">
-                     <span class="chat-img pull-left">
-                     <img src="#" alt="User Avatar" class="img-circle">
-                     </span>
                      <div class="chat-body clearfix">
                         <div class="header_sec">
                            <strong class="primary-font">Jack Sparrow</strong> <strong class="pull-right">
