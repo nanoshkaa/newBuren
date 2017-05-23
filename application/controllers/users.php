@@ -30,8 +30,8 @@ class Users extends CI_Controller{
 	public function mensen (){
 		$this->load->view('mensen.php');
 	}
-	public function start_chat (){
-		$this->load->view('chat.php');
+	public function start_chat ($user_id){
+		$this->load->view('chat.php',['user_id'=> $user_id]);
 	}
 
 	public function show_my_profile (){	 
@@ -76,10 +76,17 @@ class Users extends CI_Controller{
 		$this->load->view('contact.php');
 	}
 	public function filters (){
-		 $ddd = $this->input->post();
+		 $data = $this->input->post();
 		 $this->load->model('user');
-         $res = $this->user->filter($ddd);
+         $res = $this->user->filter($data);
          $this->load->view('profile',['filters'=> $res]);
+		
+	}
+	public function insert_message (){
+		 $data = $this->input->post();
+		 $this->load->model('user');
+         $this->user->ins_message($data);
+         $this->load->view('chat');
 		
 	}
     public function sign_up(){

@@ -38,7 +38,7 @@
 	</div>
 	<div class="container col-md-4 chat">
 		<h1>Plan een diner met dit gezin!</h1>
-		<a href="/users/start_chat"><button class="btn btn-warning">Dinner plannen</button></a>
+		<a href="/users/start_chat/<?=$user[0]['user_id']?>"><button class="btn btn-warning">Dinner plannen</button></a>
 		<p>je krijgt elkaars contact gegevens om zo zelf een diner in te plannen.</p>
 	</div>
 	<div>

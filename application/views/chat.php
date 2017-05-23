@@ -56,11 +56,13 @@
 		 	</ul>
 		 </div><!--chat_area-->
           <div class="message_write">
-    	 <textarea class="form-control" placeholder="type a message"></textarea>
-		 <div class="clearfix"></div>
-		 <div class="chat_bottom">
-			 <a href="#" class="pull-right btn btn-success">
-			 Send</a></div>
+          <form action="/users/insert_message" method="post" >
+    	       <textarea name="textarea" class="form-control" placeholder="type a message" required></textarea>
+
+             <input type="hidden" name="sent_to" value="<?= $user_id ?>">
+			 <input type="submit" value="Stuur">
+         </form>
+          </div>
 		 		</div>
 		 	</div>
          </div> <!--message_section-->
