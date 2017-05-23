@@ -51,7 +51,7 @@ class Users extends CI_Controller{
 		$this->load->view('contact.php');
 	}
 	public function send_contact (){
-	$to = "amh_3bd@hotmail.com"; // this is your Email address
+	$to = "ah.alhowidi@gmail.com"; // this is your Email address
     $from = $_POST['email']; // this is the sender's Email address
     $name = $_POST['name'];
    // $last_name = $_POST['last_name'];
