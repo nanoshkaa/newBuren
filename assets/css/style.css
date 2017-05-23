@@ -295,11 +295,6 @@ h2 {
 .row_footer{
   text-align: center;
 }
-h2 {
-  font-family: 'Anton', sans-serif;
-  font-weight: bold;
-  font-size: 30px;
-}
 .social-icons li {
     vertical-align: top;
     display: inline;
