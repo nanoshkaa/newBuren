@@ -444,4 +444,12 @@ button#send {
   color: #fff;
   cursor:pointer;
 }
+/*mensen_style*/
+#mensen_title{
+  background-color: #f6d29d;
+}
+.profile_user_pic_m{
+  width: 10%;
+  box-shadow: -1px 2px 5px 5px;
+}
     </style>

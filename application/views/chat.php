@@ -24,9 +24,7 @@
                            <strong class="primary-font">Jack Sparrow</strong> <strong class="pull-right">
                            09:45AM</strong>
                         </div>
-                        <div class="contact_sec">
-                           <strong class="primary-font">(123) 123-456</strong> <span class="badge pull-right">3</span>
-                        </div>
+                        <div class="contact_sec"></div>
                      </div>
                   </li>
                </ul>
