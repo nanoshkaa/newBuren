@@ -59,8 +59,13 @@ class Users extends CI_Controller{
    // $subject2 = "Copy of your form submission";
     $message = $_POST['message'];
     $message2 = "Here is a copy of your message " .$_POST['message'];
-    $headers = "From:" . $from;
-    $headers2 = "From:" . $to;
+    $headers =  'MIME-Version: 1.0' . "\r\n"; 
+	$headers .= "From:" . $from . "\r\n";
+	$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+	$headers2 =  'MIME-Version: 1.0' . "\r\n"; 
+	$headers2 .= "From:" . $to . "\r\n";
+	$headers2 .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+
     mail($to,$message,$headers);
     mail($from,$message2,$headers2); // sends a copy of the message to the sender
     echo "Mail Sent. Thank you " . $name . ", we will contact you shortly.";
