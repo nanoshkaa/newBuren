@@ -12,7 +12,7 @@
 			<form action="/users/filters" method="post">
 				<li role="presentation"><label for="exampleInputTaal">Zoek als gast of als host?</label></li>
 				<li role="presentation"><label class="checkbox-inline">
-					<input type="checkbox" id="inlineCheckbox1" name="guest" value="guest">Gast</label></li>
+					<input type="checkbox" id="inlineCheckbox1" name="guest" value="gast">Gast</label></li>
 				<li role="presentation"><label class="checkbox-inline">
 					<input type="checkbox" id="inlineCheckbox2" name="host" value="host" checked >Host</label></li>
 					<li role="presentation"><label for="exampleInputFamilySum">Aantaal van gezin:</label></li>
@@ -30,13 +30,17 @@
 	<div class="d-inline-block show_profiles">  
 		<?php
 		  if (isset($all_users)) {
-			for ($i=0; $i < count($all_users); $i++) { if ($all_users[$i] ['foto_profile']) {
+			for ($i=0; $i < count($all_users); $i++)
+			 { if ($all_users[$i] ['foto_profile']) {
 				
 		?>
 			<img class="profile_pic img-circle img-responsive d-inline-block" src=".<?php echo $all_users[$i]['foto_profile']; }?>">
 			<a class="d-inline-block" href="/Users/show_user_profile/<?= $all_users[$i]['user_id'] ?>"><?php echo $all_users[$i]['name']; ?></a><br>
 			<p><?php echo $all_users[$i]['describtion']; ?></p>
-			<p><?php echo $all_users[$i] ['host']; ?></p>
+			<p><?php if ($all_users[$i] ['host']) {
+			 echo $all_users[$i] ['host'];} ?></p>
+			 <p><?php if ($all_users[$i] ['guest']) {
+			 echo $all_users[$i] ['guest'];} ?></p>
 			<p>Aantaal van gezin: <?php echo $all_users[$i]['total_n']; ?></p>
 			<p>Aantaal van gasten: <?php echo $all_users[$i]['n_guests']; ?></p>
 			<p>Heeft locatie: <?php echo $all_users[$i]['location']; ?></p>
@@ -48,7 +52,10 @@
 			<img class="profile_pic img-circle img-responsive d-inline-block" src=".<?php echo $filters[$i] ['foto_profile']; ?>">
 		    <a class="d-inline-block" href="/Users/show_user_profile/<?= $filters[$i]['user_id'] ?>"><?php echo $filters[$i]['name']; ?></a><br>
 			<p><?php echo $filters[$i]['describtion']; ?></p>
-			<p><?php echo $filters[$i] ['host']; ?></p>
+			<p><?php if ($filters[$i] ['host']) {
+			 echo $filters[$i] ['host'];} ?></p>
+			 <p><?php if ($filters[$i] ['guest']) {
+			 echo $filters[$i] ['guest'];} ?></p>
 			<p>Aantaal van gezin: <?php echo $filters[$i]['total_n']; ?></p>
 			<p>Aantaal van gasten: <?php echo $filters[$i]['n_guests']; ?></p>
 			<p>Heeft locatie: <?php echo $filters[$i]['location']; ?></p>

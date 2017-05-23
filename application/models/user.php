@@ -58,7 +58,7 @@ class user extends CI_Model{
 		// return $query->result_array();
 	}
 	public function filter($data){
-		// var_dump($data);
+		//var_dump($data);
 		// die();
 			if (isset($data['guest'])) {
 			$this->db->like('guest',$data['guest']);
@@ -76,8 +76,8 @@ class user extends CI_Model{
 			$this->db->where('situation.users_user_id = user_id');
 			$this->db->where('family_info.users_user_id = user_id');
 			$filter = $this->db->get('users, situation , family_info , fotos');
-		 // var_dump($filter);
-		 // die();
+		 //var_dump($filter->result_array());
+		//  die();
     return $filter->result_array();
 	}
 	// else  if (isset($data['guest'])) {
