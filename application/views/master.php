@@ -452,4 +452,7 @@ button#send {
   width: 10%;
   box-shadow: -1px 2px 5px 5px;
 }
+.sponsers_logo{
+  width: 35%;
+}
     </style>
