@@ -141,7 +141,7 @@ body * {
 }
 #contact_form_bg{
   padding: 40px;
-  background-color: rgba(255, 152, 0, 0.35);
+  background-color: white;
   
 }
 header h1 {
@@ -149,7 +149,7 @@ header h1 {
   margin: 0 auto;
   text-align: center;
   border-bottom: 2px solid #c3c3c3;
-  background-color: rgba(255, 152, 0, 0.35);
+  background-color: white;
   box-shadow: 0px 0px 100px rgba(0, 0, 0, 0.05);
   color: #555555;
   font-weight: 300;
@@ -185,7 +185,7 @@ form#contact {
 .form-control {
   box-shadow: none;
   border-radius: 0;
-  background-color: rgba(255, 152, 0, 0.35);
+  background-color: white;
   outline: none;
   border: none;
   box-shadow: none !important;
@@ -278,5 +278,12 @@ button#send {
 .profile_user_pic{
   width: 40%;
 }
-
+.navbar-inverse {
+    background-color: #07346d;
+    border-color: rgb(0, 0, 0); 
+}
+.navbar a{
+  color: white;
+  font-size: 1.2em;
+}
     </style>

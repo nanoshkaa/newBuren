@@ -8,31 +8,33 @@
 <body>
   <?php $this->load->view('nav_bar'); ?>
   <div>
-    <p>Hallo <?= ($this->session->userdata('name')); ?></p>
+    <h3>Hallo <?= ($this->session->userdata('name')); ?></h3>
 	</div>
 	
   <div class="form-group">
       <?php 
       for ($i=0; $i < count($user); $i++) { ?>
        <?php if (isset($user[$i]['foto_profile'])) { ?> <img class="profile_pic img-circle img-responsive" src="/.<?php echo $user[$i] ['foto_profile']; ?>"><?php } ?>
-        <?php echo $user[$i]['name']; ?><br>
-        <?php echo $user[$i]['describtion']; ?><br>
-        <?php echo $user[$i]['total_n']; ?><br>
-        <?php echo $user[$i]['location']; ?><br>
-        <?php echo $user[$i]['city']; ?><br>
-        <?php if (isset($user[$i]['english'])) echo $user[$i]['english']; ?><br>
-        <?php if (isset($user[$i]['nederlands'])) echo $user[$i]['nederlands'];?>
-        <?php if (isset($user[$i]['turquish'])) echo $user[$i]['turquish']; ?>
-        <?php if (isset($user[$i]['polsk'])) echo $user[$i]['polsk']; ?>
-        <?php if (isset($user[$i]['arabic'])) echo $user[$i]['arabic']; ?>
-        <?php if (isset($user[$i]['russian'])) echo $user[$i]['russian']; ?>
-        <?php if (isset($user[$i]['tijrijna'])) echo $user[$i]['tijrijna']; ?>
-        <?php if (isset($user[$i]['faresi'])) echo $user[$i]['faresi']; ?>        
-        <?php if (isset($user[$i]['spanish'])) echo $user[$i]['spanish']; ?>
-        <?php if (isset($user[$i]['french'])) echo $user[$i]['french']; ?>
-        <?php if (isset($user[$i]['other'])) echo $user[$i]['other']; ?><br>
-        <?php echo $user[$i]['host']; ?><br>
-        
+        <?php echo $user[$i]['describtion']; ?>
+        <h4>Aantaal van gezin: </h4><p><?php echo $user[$i]['total_n']; ?></p>
+        <h4>Heeft locatie: </h4><p><?php echo $user[$i]['location']; ?></p>
+        <h4>Staat: </h4><p><?php echo $user[$i]['city']; ?></p>
+        <h4><?php if ($user[$i] ['host']) {
+       echo $user[$i] ['host'];} ?></h4>
+       <h4><?php if ($user[$i] ['guest']) {
+       echo $user[$i] ['guest'];} ?></h4>
+        <h4>Talen: </h4>
+        <?php if (isset($user[$i]['english'])) echo $user[$i]['english'].","; ?>
+        <?php if (isset($user[$i]['nederlands'])) echo $user[$i]['nederlands'].",";?>
+        <?php if (isset($user[$i]['turquish'])) echo $user[$i]['turquish'].","; ?>
+        <?php if (isset($user[$i]['polsk'])) echo $user[$i]['polsk'].","; ?>
+        <?php if (isset($user[$i]['arabic'])) echo $user[$i]['arabic'].","; ?>
+        <?php if (isset($user[$i]['russian'])) echo $user[$i]['russian'].","; ?>
+        <?php if (isset($user[$i]['tijrijna'])) echo $user[$i]['tijrijna'].","; ?>
+        <?php if (isset($user[$i]['faresi'])) echo $user[$i]['faresi'].","; ?>        
+        <?php if (isset($user[$i]['spanish'])) echo $user[$i]['spanish'].","; ?>
+        <?php if (isset($user[$i]['french'])) echo $user[$i]['french'].","; ?>
+        <?php if (isset($user[$i]['other'])) echo $user[$i]['other']."."; ?> 
       <?php } ?>
       <div id="errors">
         <?php if ($errors) {
