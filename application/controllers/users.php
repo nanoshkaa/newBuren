@@ -54,20 +54,16 @@ class Users extends CI_Controller{
 	$to = "ah.alhowidi@gmail.com"; // this is your Email address
     $from = $_POST['email']; // this is the sender's Email address
     $name = $_POST['name'];
-   // $last_name = $_POST['last_name'];
-    //$subject = "Form submission";
-   // $subject2 = "Copy of your form submission";
+    //$last_name = $_POST['last_name'];
+    $subject = "Form submission";
+    $subject2 = "Copy of your form submission";
     $message = $_POST['message'];
     $message2 = "Here is a copy of your message " .$_POST['message'];
-    $headers =  'MIME-Version: 1.0' . "\r\n"; 
-	$headers .= "From:" . $from . "\r\n";
-	$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
-	$headers2 =  'MIME-Version: 1.0' . "\r\n"; 
-	$headers2 .= "From:" . $to . "\r\n";
-	$headers2 .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+	$headers = "From:" . $from . "\r\n";
+	$headers2 = "From:" . $to . "\r\n";
 
-    mail($to,$message,$headers);
-    mail($from,$message2,$headers2); // sends a copy of the message to the sender
+    mail($to,$subject,$message,$headers);
+    mail($from,$subject2,$message2,$headers2); // sends a copy of the message to the sender
     echo "Mail Sent. Thank you " . $name . ", we will contact you shortly.";
     // You can also use header('Location: thank_you.php'); to redirect to another page.
 		$this->load->view('contact.php');
