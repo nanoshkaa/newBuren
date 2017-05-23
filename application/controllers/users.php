@@ -157,7 +157,7 @@ class Users extends CI_Controller{
 		        $uploadOk = 0;
 		    }
 			if (file_exists($target_file)) {
-			    $errors[] = "<p style='color: red'>Sorry, file already exists.</p>";
+			    $errors[] = "<p style='color: red'>Sorry, file already exists,Or the name is not corect</p>";
 			    $uploadOk = 0;
 			}
 			if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "gif" ) {
