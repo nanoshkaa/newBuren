@@ -211,22 +211,18 @@ button#send {
 }
 .side_bar{
   width: 350px;
-  margin-top: 46px;
-  background-color: rgba(255, 152, 0, 0.35);
+  background-color: white;
   height: 100%;
-  padding-left: 0px;
-  padding-right: 0px;
-  border-right: 1px solid rgba(255, 152, 0, 0.35);
+  padding-left: 10px;
+  border-right: white;
   padding-bottom: 30px;
   position: fixed;
-  overflow: scroll;
   display: inline-block;
 }
 .show_profiles{
   margin-left: 350px;
   background: white;
-  padding: 40px;
-  padding-top: 55px;
+  padding: 0px 20px 100px 20px;
   height: auto;
 }
 .nav-stacked{
