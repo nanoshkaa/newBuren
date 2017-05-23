@@ -55,12 +55,9 @@
    Have another question for us?
   </label>
   <div class="answers">
-       <p>Send us a message on our <a href="#">Contact Page</a>.</p>
+       <p>Send us a message on our <a href="/users/contact">Contact page</a></p>
   </div>
 </div>
 </div>
-
-<!--Libraries and Plugins-->
-        <script src="../assets/index/js/landing2.js"></script>
 <?php $this->load->view('footer'); ?>
 </html>
