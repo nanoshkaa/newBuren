@@ -32,7 +32,7 @@
 <script src="../assets/index/js/landing2.js"></script>
 <!--Modernizr-->
 <script src="../assets/index/js/libs/modernizr.custom.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>    
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>   
 <script>$('document').ready(function() {
   var msg = $('#message');
   msg.autosize();
@@ -149,7 +149,11 @@ header h1 {
   margin: 0 auto;
   text-align: center;
   border-bottom: 2px solid #c3c3c3;
+<<<<<<< HEAD
   background-color: #f1f1f1;
+=======
+  background-color: white;
+>>>>>>> origin/master
   box-shadow: 0px 0px 100px rgba(0, 0, 0, 0.05);
   color: #555555;
   font-weight: 300;
@@ -278,5 +282,12 @@ button#send {
 .profile_user_pic{
   width: 40%;
 }
-
+.navbar-inverse {
+    background-color: #07346d;
+    border-color: rgb(0, 0, 0); 
+}
+.navbar a{
+  color: white;
+  font-size: 1.2em;
+}
     </style>

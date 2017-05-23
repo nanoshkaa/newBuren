@@ -33,10 +33,7 @@
         <?php if (isset($user[$i]['faresi'])) echo $user[$i]['faresi'].","; ?>        
         <?php if (isset($user[$i]['spanish'])) echo $user[$i]['spanish'].","; ?>
         <?php if (isset($user[$i]['french'])) echo $user[$i]['french'].","; ?>
-        <?php if (isset($user[$i]['other'])) echo $user[$i]['other']."."; ?>
-        
-        
-        
+        <?php if (isset($user[$i]['other'])) echo $user[$i]['other']."."; ?> 
       <?php } ?>
 	</div>
 	<div class="container col-md-4 chat">
