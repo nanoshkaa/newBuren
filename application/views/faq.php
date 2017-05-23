@@ -14,18 +14,18 @@ body {
   width: 80%;
   padding: 20px;
   margin: 0 auto;
-  padding: 0 60px 0 0;
+  
 }
 .centerplease {
   margin: 0 auto;
   max-width: auto;
   font-size: 40px;
-  color: #f3c59f;
+  color: black;
 }
 .question {
   position: relative;
-  background: #f3c59f;
-  margin: 0;
+  background: #23527c;
+  margin: 0 auto;
   padding: 10px 10px 10px 50px;
   display: block;
   width:100%;
