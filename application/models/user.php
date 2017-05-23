@@ -253,8 +253,6 @@ class user extends CI_Model{
      }
 
 	public function update_pic($post,$img) {
-		var_dump($img);
-		die();
 		$user_id = $this->session->userdata('users_user_id');
        	$this->db->set('foto_profile', $img);
 		$this->db->where('users_user_id', $user_id);
