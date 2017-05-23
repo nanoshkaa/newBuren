@@ -27,6 +27,9 @@ class Users extends CI_Controller{
 	public function events (){
 		$this->load->view('events.php');
 	}
+	public function start_chat (){
+		$this->load->view('chat.php');
+	}
 
 	public function show_my_profile (){	 
 		$user_id = $this->session->userdata('user_id');

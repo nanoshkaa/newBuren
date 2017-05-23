@@ -8,7 +8,8 @@
 	<?php $this->load->view('nav_bar'); ?>
 	<h3>Hallo <?= ($this->session->userdata('name'));
            ?></h3>
-	<h4>Schrijf jouw gezin ook in! Klik hier om eenvoudig aan te melden.</h4>
+	<h4>Nieuwe Buren Lid :</h4>
+	<div class="container col-md-8"col-md-8"">
 	<?php if (isset($user)) {
 			for ($i=0; $i < count($user); $i++) { 
 				echo $user[$i] ['host']."<br>";
@@ -30,6 +31,12 @@
         <?php if (isset($user[$i]['other'])) echo $user[$i]['other']; ?>
 				<img class="profile_pic img-circle img-responsive" src="/.<?php echo $user[$i] ['foto_profile']; ?>">
 			<?php }	} ?>
+	</div>
+	<div class="container col-md-4 chat">
+		<h1>Plan een diner met dit gezin!</h1>
+		<a href="/users/start_chat"><button class="btn btn-warning">Dinner plannen</button></a>
+		<p>je krijgt elkaars contact gegevens om zo zelf een diner in te plannen.</p>
+	</div>
 		<?php $this->load->view('footer'); ?>
 </body>
 </html>
