@@ -279,4 +279,8 @@ button#send {
 .chat{
   text-align: center;
 }
+.profile_user_pic{
+  width: 40%;
+}
+
     </style>
