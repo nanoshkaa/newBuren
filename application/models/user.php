@@ -261,7 +261,7 @@ class user extends CI_Model{
     public function ins_message($post){
 		$user_id = $this->session->userdata('user_id');
 		if ($_POST) {
-		$query1 = "INSERT INTO messages(message,sent_to created_at, updated_at, users_user_id) VALUES (?,?, NOW(),NOW(),?)";
+		$query1 = "INSERT INTO messages(message,sent_to ,created_at, updated_at, users_user_id) VALUES (?,?, NOW(),NOW(),?)";
 		$values = [$post['textarea'],$post['sent_to'],$user_id];
 		return $this->db->query($query1 , $values);}
 	}

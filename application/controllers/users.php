@@ -30,8 +30,18 @@ class Users extends CI_Controller{
 	public function mensen (){
 		$this->load->view('mensen.php');
 	}
+	public function sponsers (){
+		$this->load->view('sponsers.php');
+	}
 	public function start_chat ($user_id){
 		$this->load->view('chat.php',['user_id'=> $user_id]);
+	}
+	public function insert_message (){
+		 $data = $this->input->post();
+		 $this->load->model('user');
+         $this->user->ins_message($data);
+         $this->load->view('chat');
+		
 	}
 
 	public function show_my_profile (){	 
@@ -82,13 +92,7 @@ class Users extends CI_Controller{
          $this->load->view('profile',['filters'=> $res]);
 		
 	}
-	public function insert_message (){
-		 $data = $this->input->post();
-		 $this->load->model('user');
-         $this->user->ins_message($data);
-         $this->load->view('chat');
-		
-	}
+	
     public function sign_up(){
 
       $this->form_validation->set_rules('name','name','required|min_length[3]|max_length[25]',array(
