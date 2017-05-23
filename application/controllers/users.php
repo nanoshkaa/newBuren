@@ -24,6 +24,9 @@ class Users extends CI_Controller{
 	public function show_testimonial (){
 		$this->load->view('testimonial.php');
 	}
+	public function events (){
+		$this->load->view('events.php');
+	}
 
 	public function show_my_profile (){	 
 		$user_id = $this->session->userdata('user_id');

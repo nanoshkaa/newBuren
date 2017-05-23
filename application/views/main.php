@@ -23,7 +23,7 @@
 	  <ul>
 	    <li><a href="/users/show_testimonial"><span class="nav-label">Testimonials</span></a></li>
 	    <li><a href="/users/show_profile"> <span class="nav-label">Slider Met Profielen</span></a></li>
-	    <li><span class="nav-label">Events</span></li>
+	    <li><a href="/users/events"><span class="nav-label">Events</span></a></li>
 	    <li><span class="nav-label">Sponsors</span></li>
 	    <li><span class="nav-label">Mensen Achter NB</span></li>
 	    <li><a href="/users/faq"> <span class="nav-label">FAQ</span></a></li>
