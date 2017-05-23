@@ -219,4 +219,46 @@ button#send {
 .nav-stacked{
   margin: 0px auto;
 }
+/* testimonial page style */
+.accordian{
+  width: 900px;
+  height: 450px;
+  overflow:hidden; 
+  margin: 50px auto 20px;
+}
+.accordian li{
+  position: relative;
+  display:block;
+  width:10px;
+  float: left;
+  border-left: 1px solid #888;
+  -webkit-box-shadow: 0 0 25px 10px rgba(0,0,0,0.5);
+  -moz-box-shadow: 0 0 25px 10px rgba(0,0,0,0.5);
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+}
+.accordian ul:hover li{
+  width: 10px;
+}
+.accordian ul li:hover{
+  width:700px;
+}
+.accordian ul li:hover{
+  width:700px;
+}
+.image_title{
+  background: rgba(0,0,0,0.5);
+  position:absolute;
+  left:0;
+  bottom:0;
+  width:700px;
+}
+.image_title a{
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  padding:20px;
+  font-size:16px;
+}
     </style>

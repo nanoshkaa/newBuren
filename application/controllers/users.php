@@ -21,6 +21,9 @@ class Users extends CI_Controller{
 	public function show_sign_up (){
 		$this->load->view('signin.php');
 	}
+	public function show_testimonial (){
+		$this->load->view('testimonial.php');
+	}
 
 	public function show_my_profile (){	 
 		$user_id = $this->session->userdata('user_id');

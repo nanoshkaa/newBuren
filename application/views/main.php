@@ -21,7 +21,7 @@
 	  </div>
 	<nav id="nav" class="out">
 	  <ul>
-	    <li><span class="nav-label">Testimonials</span></li>
+	    <li><a href="/users/show_testimonial"><span class="nav-label">Testimonials</span></a></li>
 	    <li><a href="/users/show_profile"> <span class="nav-label">Slider Met Profielen</span></a></li>
 	    <li><span class="nav-label">Events</span></li>
 	    <li><span class="nav-label">Sponsors</span></li>
