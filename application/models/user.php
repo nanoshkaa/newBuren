@@ -104,6 +104,13 @@ class user extends CI_Model{
 
 		return $this->db->query($query)->row_array();
 	}
+	public function get_message($id) {
+		$this->db->select('*');
+		$this->db->from('users, messages');
+		$this->db->where('user_id' , $id);
+		$this->db->where('messages.users_user_id = user_id');
+		$query1 = $this->db->get()->result_array(); 
+	}
 	public function show_user($id) {
 		$this->db->select('*');
 		$this->db->from('users, fotos');

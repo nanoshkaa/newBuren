@@ -59,12 +59,12 @@
           <form action="/users/insert_message" method="post" >
     	       <textarea name="textarea" class="form-control" placeholder="type a message" required></textarea>
 
-             <input type="hidden" name="sent_to" value="<?= $user_id ?>">
+             <input type="hidden" name="sent_to" value="<?= $this->session->userdata('message_user_id') ?>">
 			 <input type="submit" value="Stuur">
          </form>
           </div>
 		 		</div>
 		 	</div>
-         </div> <!--message_section-->
+         </div>
 </body>
 </html>

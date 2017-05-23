@@ -34,7 +34,13 @@ class Users extends CI_Controller{
 		$this->load->view('sponsers.php');
 	}
 	public function start_chat ($user_id){
-		$this->load->view('chat.php',['user_id'=> $user_id]);
+		$user_info = array(
+                'message_user_id'=>$user_id
+            );
+		$old_session = $this->session->userdata();
+array_push($old_session, $user_info['message_user_id']);
+$this->session->set_userdata( $old_session);
+		$this->load->view('chat.php');
 	}
 	public function insert_message (){
 		 $data = $this->input->post();
