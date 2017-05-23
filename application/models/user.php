@@ -245,12 +245,22 @@ class user extends CI_Model{
 		$this->db->insert('family_info');
 			
 	}
-
-	public function add_img($post,$img) {
+	public function add_img() {
 		$user_id = $this->session->userdata('users_user_id');
        $query = "INSERT INTO fotos (foto_profile, created_at, updated_at, users_user_id) VALUES (?, NOW(), NOW(),?)";
-       $values = [$img, $this->session->userdata('user_id')];
+       $values = ['./assets/image/profile/defulte pic/1.jpeg', $this->session->userdata('user_id')];
         $this->db->query($query, $values);
+     }
+
+	public function update_pic($post,$img) {
+		var_dump($img);
+		die();
+		$user_id = $this->session->userdata('users_user_id');
+       	$this->db->set('foto_profile', $img);
+		$this->db->where('users_user_id', $user_id);
+		 $query = $this->db->update('fotos');
+
+
      }
     
 }

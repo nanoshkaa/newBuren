@@ -110,15 +110,13 @@ class Users extends CI_Controller{
             $this->user->insert_situation($data);
             $this->user->insert_lang($data);
             $this->user->insert_family($data);
+            $this->user->add_img();
             $all_users = $this->user->get_all_user();
 			$this->load->view('profile',['all_users'=> $all_users]);		
         }
         }
     }
 	public function add_profile_img() {
-		// var_dump($this->input->post());
-		// var_dump($_FILES);
-		// die();
 		$errors = [];			
 			if ($_FILES["image"]["tmp_name"]) {
 
@@ -126,7 +124,6 @@ class Users extends CI_Controller{
 			$target_file = $target_dir . basename($_FILES["image"]["name"]);
 			$uploadOk = 1;
 			$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
-			// Check if image file is a actual image or fake image
 		    $check = getimagesize($_FILES["image"]["tmp_name"]);
 		    if($check !== false) {
 		        $uploadOk = 1;
@@ -134,51 +131,40 @@ class Users extends CI_Controller{
 		        $errors[] = "<p style='color: red'>File is not an image.</p>";
 		        $uploadOk = 0;
 		    }
-			// Check if file already exists
 			if (file_exists($target_file)) {
 			    $errors[] = "<p style='color: red'>Sorry, file already exists.</p>";
 			    $uploadOk = 0;
 			}
-			// Allow certain file formats
 			if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "gif" ) {
-				// echo "inside the not image validation";
 			    $errors[] = "<p style='color: red'>Sorry, only JPG, JPEG, PNG & GIF files are allowed.</p>";
 			    $uploadOk = 0;
 			}
-			// Check if $uploadOk is set to 0 by an error
 			if ($uploadOk == 0) {
 				$this->session->set_flashdata('errors', $errors);
 				$user_id = $this->session->userdata('user_id');
 				$this->load->model('User');
 				$user = $this->User->show_user($user_id); 
 				$this->load->view('my_profile.php',['user'=> $user]+['errors'=>$errors] );
-				//$this->load->view('my_profile.php',$errors + $user);
-			// if everything is ok, try to upload file
 			} else {
 			    if (copy($_FILES["image"]["tmp_name"], $target_file)) {
 			        $errors[] = "<p style='color: green'>The file ". basename( $_FILES["image"]["name"]). " has been succesfully uploaded.</p>";
 					$errors[] =  "<p style='color: green'>New Image has succesfully been added</p>";
 					$this->load->model('user');
-				$this->user->add_img($this->input->post(), $target_file);
-					//$this->session->set_flashdata('errors', $errors);
+				$this->user->update_pic($this->input->post(), $target_file);
 					$user_id = $this->session->userdata('user_id');
 				$this->load->model('User');
 				$user = $this->User->show_user($user_id); 
-				$this->load->view('my_profile.php',['user'=> $user]+['errors'=>$errors] );
-					//redirect('../users/add_profile_img');
+				$this->load->view('my_profile.php',['user'=> $user]+['errors'=>$errors] );;
 			    } else {
 			        $errors[] = "<p>Sorry, there was an error uploading your file.</p>";
-					//$this->session->set_flashdata('errors', $errors);
 					$user_id = $this->session->userdata('user_id');
 				$this->load->model('User');
 				$user = $this->User->show_user($user_id); 
 				$this->load->view('my_profile.php',['user'=> $user]+['errors'=>$errors] );
-					//redirect('../users/add_profile_img');
 			    }
 			}
 		} else {
 			$errors[] = '<p style="color: red">An image file is required</p>';
-				//$this->session->set_flashdata('errors', $errors);
 				$user_id = $this->session->userdata('user_id');
 				$this->load->model('User');
 				$user = $this->User->show_user($user_id); 

@@ -46,14 +46,13 @@
               } ?>
   </div>     
   </div>
-      <?php if (empty($user[0]['foto_profile'])) { ?>
     <label for="exampleInputFile">Voeg foto toe</label>
     <form action="/users/add_profile_img" method="post" enctype="multipart/form-data">
     <div class="form-group"><input type="file" name="image">
     <button type="submit" class="btn btn-default">Voeg foto toe</button>
   </div>
     </form>
-      <?php };?>
+     
       <?php $this->load->view('footer'); ?>
 </body>
 </html>
