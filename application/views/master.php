@@ -455,4 +455,7 @@ button#send {
 .sponsers_logo{
   width: 35%;
 }
+.chat h4{
+ background-color: #f6d29d; 
+}
     </style>
