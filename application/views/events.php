@@ -9,12 +9,12 @@
 	<h2>Multiculti dineren</h2>
 	<img src="../assets/image/main_pic/Capture.png" alt="NieuweBurenLogo" width="175">
     <p>Begin met multiculti dineren door hieronder aan te geven of je graag te gast wilt zijn of dat je als host een diner wilt organiseren.</p>
-    <section class="content">
+    <section>
         <img src="../assets/image/events/n.jpg" alt="NieuweBurenEvent">
-    <div class="row_footer col-lg-12 col-md-12 col-sm-12 col-xs-12">
-        <h2>Inschrijven op Facebook</h2>
-        <a target="_blank" href="https://www.facebook.com/events/114801509073951/?acontext=%7B%22ref%22%3A%223%22%2C%22ref_newsfeed_story_type%22%3A%22regular%22%2C%22feed_story_type%22%3A%2217%22%2C%22action_history%22%3A%22null%22%7D" class="social-icon">
-        <i class="fa fa-facebook"></i></a>
+    </section>
+    <div>
+        <a target="_blank" href="https://www.facebook.com/events/114801509073951/?acontext=%7B%22ref%22%3A%223%22%2C%22ref_newsfeed_story_type%22%3A%22regular%22%2C%22feed_story_type%22%3A%2217%22%2C%22action_history%22%3A%22null%22%7D" class="social-icon"><h2>Inschrijven op Facebook</h2>
+        </a>
         <?php $this->load->view('footer'); ?>
 	</div>
 </body>
