@@ -27,6 +27,9 @@ class Users extends CI_Controller{
 	public function events (){
 		$this->load->view('events.php');
 	}
+	public function mensen (){
+		$this->load->view('mensen.php');
+	}
 	public function start_chat (){
 		$this->load->view('chat.php');
 	}
