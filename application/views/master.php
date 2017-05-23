@@ -453,7 +453,7 @@ button#send {
   box-shadow: -1px 2px 5px 5px;
 }
 .sponsers_logo{
-  width: 35%;
+  width: 45%;
 }
 .chat h4{
  background-color: #f6d29d; 
