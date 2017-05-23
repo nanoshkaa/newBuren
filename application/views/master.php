@@ -221,15 +221,16 @@ button#send {
 }
 /* testimonial page style */
 .accordian{
-  width: 900px;
-  height: 450px;
+  width: 950px;
+  height: 550px;
   overflow:hidden; 
   margin: 50px auto 20px;
 }
 .accordian li{
   position: relative;
   display:block;
-  width:10px;
+  width:20px;
+  height: 500px;
   float: left;
   border-left: 1px solid #888;
   -webkit-box-shadow: 0 0 25px 10px rgba(0,0,0,0.5);
@@ -239,7 +240,7 @@ button#send {
   -moz-transition: all 0.5s;
 }
 .accordian ul:hover li{
-  width: 10px;
+  width: 20px;
 }
 .accordian ul li:hover{
   width:700px;
@@ -252,7 +253,8 @@ button#send {
   position:absolute;
   left:0;
   bottom:0;
-  width:700px;
+  width:200px;
+  height: 50px;
 }
 .image_title a{
   display: block;
