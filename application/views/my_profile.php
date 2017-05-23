@@ -46,8 +46,16 @@
               } ?>
   </div>     
   </div>
-    <label for="exampleInputFile">Voeg foto toe</label>
-    <form action="/users/add_profile_img" method="post" enctype="multipart/form-data">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("#chang").click(function(){
+        $("#fotoForm").toggle();
+    });
+});
+</script>
+  <a href="#" id="chang"><label for="exampleInputFile">change my foto</label></a>
+    <form id="fotoForm" style="display: none;" action="/users/add_profile_img" method="post" enctype="multipart/form-data">
     <div class="form-group"><input type="file" name="image">
     <button type="submit" class="btn btn-default">Voeg foto toe</button>
   </div>
