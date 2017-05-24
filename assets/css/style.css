@@ -287,20 +287,8 @@ h2 {
 .row_footer{
   text-align: center;
 }
-.social-icons li {
-    vertical-align: top;
-    display: inline;
-    height: 100px;
-    margin-right: 30px;
-}
-.fa-facebook {
-    padding:10px 14px 30px 10px;
-    background-color: white;
-}
-.fa-facebook:hover {
-    background-color: #3d5b99;
-    padding:10px 14px 30px 10px;
-}
+
+
 
   
 
