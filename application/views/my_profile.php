@@ -7,11 +7,8 @@
 </head>
 <body>
   <?php $this->load->view('nav_bar'); ?>
-  <div>
+  <div class="container form-group">
     <h3>Hallo <?= ($this->session->userdata('name')); ?></h3>
-	</div>
-	
-  <div class="form-group">
       <?php 
       for ($i=0; $i < count($user); $i++) { ?>
        <?php if (isset($user[$i]['foto_profile'])) { ?> <img class="profile_pic img-circle img-responsive" src="/.<?php echo $user[$i] ['foto_profile']; ?>"><?php } ?>
@@ -56,9 +53,10 @@ $(document).ready(function(){
     });
 });
 </script>
+  <div class="container form-group">
   <a href="#" id="chang"><label for="exampleInputFile">change my foto</label></a>
     <form id="fotoForm" style="display: none;" action="/users/add_profile_img" method="post" enctype="multipart/form-data">
-    <div class="form-group"><input type="file" name="image">
+    <input type="file" name="image">
     <button type="submit" class="btn btn-default">Voeg foto toe</button>
   </div>
     </form>
