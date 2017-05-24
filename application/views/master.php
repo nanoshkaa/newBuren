@@ -463,4 +463,13 @@ button#send {
 .chat h4{
  background-color: #f6d29d; 
 }
+.foot a{
+  color: black;
+}
+.sign_up{
+  margin-bottom: 70px;
+}
+.container h3{
+  background-color:#f6d29d; 
+}
     </style>

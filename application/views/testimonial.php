@@ -44,6 +44,6 @@
 		      <img src="../assets/image/testimonial/4n.jpg">
 		    </li>
 		</div>
-<?php $this->load->view('footer'); ?>
+        <?php $this->load->view('footer'); ?>
 </body>
 </html>

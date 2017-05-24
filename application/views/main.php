@@ -40,9 +40,9 @@
         <a href="/users/show_profile"> <button type="button" class="btn btn-primary btn-lg">Bekijk gezinnen die al mee doen</button></a>
 	</section>
 	<div class="row_footer col-lg-12 col-md-12 col-sm-12 col-xs-12">
-        <a target="_blank" href="https://www.facebook.com/ProjectNieuweBuren/" class="social-icon"><h2>Volg ons op Facebook</h2></a>
-         <?php $this->load->view('footer'); ?> 
+        <a target="_blank" href="https://www.facebook.com/ProjectNieuweBuren/" class="social-icon"><h2>Volg ons op Facebook</h2></a> 
 	</div>
+	<?php $this->load->view('footer'); ?>
 	<script src="/assets/javascript/index.js"></script>
 	</body>
 </html>

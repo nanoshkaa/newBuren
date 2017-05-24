@@ -41,8 +41,6 @@
 		<a href="/users/start_chat/<?=$user[0]['user_id']?>"><button class="btn btn-warning">Dinner plannen</button></a>
 		<p>je krijgt elkaars contact gegevens om zo zelf een diner in te plannen.</p>
 	</div>
-	<div>
 		<?php $this->load->view('footer'); ?>
-	</div>
 </body>
 </html>

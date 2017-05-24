@@ -32,6 +32,8 @@
         </form>
       </div>
     </section>  
-      <?php $this->load->view('footer'); ?> 
+      <div>
+        <?php $this->load->view('footer'); ?>
+  </div> 
   </body>
 </html>

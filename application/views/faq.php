@@ -99,5 +99,7 @@
   </div>
 </div>
 </div>
-<?php $this->load->view('footer'); ?>
+<div>
+        <?php $this->load->view('footer'); ?>
+  </div>
 </html>

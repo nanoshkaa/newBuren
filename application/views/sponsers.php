@@ -39,6 +39,8 @@
             <img class="sponsers_logo  img-responsive" src="../assets/image/sponsers/7.png" alt="logo"><br>
             <br>
         </div>
-	<?php $this->load->view('footer'); ?>
+	<div>
+        <?php $this->load->view('footer'); ?>
+    </div>
 </body>
 </html>

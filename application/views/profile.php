@@ -61,6 +61,8 @@
 			<p>Heeft locatie: <?php echo $filters[$i]['location']; ?></p>
 		<?php }}?>
 	</div>	
-		<?php $this->load->view('footer'); ?>	
+		<div>
+        <?php $this->load->view('footer'); ?>
+	</div>	
 </body>
 </html>

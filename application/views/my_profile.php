@@ -61,6 +61,8 @@ $(document).ready(function(){
   </div>
     </form>
      
-      <?php $this->load->view('footer'); ?>
+      <div>
+        <?php $this->load->view('footer'); ?>
+  </div>
 </body>
 </html>
