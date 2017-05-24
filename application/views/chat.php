@@ -5,7 +5,10 @@
 	<title>Nieuve Buren chat</title>
 </head>
 <body>
-<?php $this->load->view('nav_bar'); ?>
+<?php $this->load->view('nav_bar');
+ // var_dump($sent);
+ // die();
+ ?>
 <script src="https://use.fontawesome.com/45e03a14ce.js"></script>
     	 <div class="container col-xs-6 col-md-4">
             <div id="custom-search-input">
@@ -44,16 +47,30 @@
 		 
 		 <div class="chat_area ">
 		 	<ul class="list-unstyled">
+            <?php for ($i=0; $i < count($rec); $i++){ ?>
 		 		<li class="left clearfix">
                      <span class="chat-img1 pull-left">
-                     <img src="#" alt="User Avatar" class="img-circle">
+                     <p><?php echo $rec[$i]['name']; ?></p>
                      </span>
                      <div class="chat-body1 clearfix">
-                        <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia.</p>
-						<div class="chat_time pull-right">09:40PM</div>
+                        <p><?php echo $rec[$i]['message']; ?></p>
+						<div class="chat_time pull-right"><p><?php echo $rec[$i]['created_at']; ?></p></div>
                      </div>
                   </li>
-		 	</ul>
+                   <?php } ?>
+                   <?php for ($i=0; $i < count($sent); $i++){ ?>
+            <li class="left clearfix admin_chat">
+                     <span class="chat-img1 pull-right">
+                     <p><?php echo "Me" ?></p>
+                     </span>
+                     <div class="chat-body1 clearfix">
+                        <p><?php echo $sent[$i]['message']; ?></p>
+                  <div class="chat_time pull-left"><p><?php echo $sent[$i]['created_at']; ?></p></div>
+                     </div>
+                  </li>
+                <?php } ?>  
+         </ul>
+         </div>
 		 </div><!--chat_area-->
           <div class="message_write">
           <form action="/users/insert_message" method="post" >

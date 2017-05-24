@@ -34,20 +34,31 @@ class Users extends CI_Controller{
 		$this->load->view('sponsers.php');
 	}
 	public function start_chat ($user_id){
+		if ($this->session->userdata('logged_in')) {
+		
 		$user_info = array(
-                'message_user_id'=>$user_id
+                'message_user_id'=>$user_id,
+                'name'=>$this->session->userdata('name'),
+            	'email'=>$this->session->userdata('email'),
+            	'user_id'=>$this->session->userdata('user_id'),
+            	'logged_in'=>$this->session->userdata('logged_in')
             );
-		$old_session = $this->session->userdata();
-array_push($old_session, $user_info['message_user_id']);
-$this->session->set_userdata( $old_session);
-		$this->load->view('chat.php');
+		$this->session->set_userdata( $user_info);
+		$rec = $this->user->get_rec_message();
+		$sent = $this->user->get_sent_message();
+		$this->load->view('chat.php',['rec'=> $rec]+['sent'=>$sent]); 
+	} else {
+		$this->load->view('signin.php');
 	}
+	}
+
 	public function insert_message (){
 		 $data = $this->input->post();
 		 $this->load->model('user');
          $this->user->ins_message($data);
-         $this->load->view('chat');
-		
+         $rec = $this->user->get_rec_message();
+		$sent = $this->user->get_sent_message();
+		$this->load->view('chat.php',['rec'=> $rec]+['sent'=>$sent]); 
 	}
 
 	public function show_my_profile (){	 

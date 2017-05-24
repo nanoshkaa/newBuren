@@ -104,12 +104,25 @@ class user extends CI_Model{
 
 		return $this->db->query($query)->row_array();
 	}
-	public function get_message($id) {
+	public function get_sent_message() {
+		$user_id = $this->session->userdata('user_id');
+		$message_user_id = $this->session->userdata('message_user_id');
 		$this->db->select('*');
 		$this->db->from('users, messages');
-		$this->db->where('user_id' , $id);
-		$this->db->where('messages.users_user_id = user_id');
-		$query1 = $this->db->get()->result_array(); 
+		$this->db->where('user_id', $user_id);
+		$this->db->where('messages.sent_to',  $message_user_id);
+		$query = $this->db->get(); 
+		return $query->result_array();
+			}
+	public function get_rec_message() {
+		$user_id = $this->session->userdata('user_id');
+		$message_user_id = $this->session->userdata('message_user_id');
+		$this->db->select('*');
+		$this->db->from('users, messages');
+		$this->db->where('user_id', $message_user_id);
+		$this->db->where('messages.sent_to', $user_id);
+		$query = $this->db->get(); 
+		return $query->result_array();
 	}
 	public function show_user($id) {
 		$this->db->select('*');
