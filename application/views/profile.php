@@ -6,7 +6,7 @@
 </head>
 <body>
 <?php $this->load->view('nav_bar'); ?>
-	<div class="nav nav-stacked nav-pills container col-xs-12 col-sm-6 col-md-8 side_bar">
+	<div class="nav nav-stacked nav-pills container col-xs-6 col-md-4 side_bar">
 		<h3>Hallo <?= ($this->session->userdata('name')); ?></h3><br>
 		<ul class="nav nav-stacked nav-pills">
 			<form action="/users/filters" method="post">
@@ -27,7 +27,7 @@
 			</form>
 		</ul>
 	</div>	 
-	<div class="container col-xs-6 col-md-4 show_profiles">  
+	<div class="container col-xs-12 col-sm-6 col-md-8 show_profiles">  
 		<?php
 		  if (isset($all_users)) {
 			for ($i=0; $i < count($all_users); $i++)

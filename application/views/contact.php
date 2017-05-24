@@ -28,7 +28,7 @@
             <textarea class="form-control" id="message" name="message" placeholder="MESSAGE"></textarea>
           </div>
         </div>
-          <button type="submit" id="send" name="send" class="btn btn-block">Stuur</button>
+          <button type="submit" id="send" name="send" class="btn btn-warning">Stuur</button>
         </form>
       </div>
     </section>  

@@ -157,9 +157,8 @@ header h1 {
   text-transform: uppercase;
   margin: 0 auto;
   text-align: center;
-  border-bottom: 2px solid #c3c3c3;
-  background-color: #f1f1f1;
-  background-color: white;
+  border-bottom: 2px solid #dddddd;
+  background-color: #dddddd;
   box-shadow: 0px 0px 100px rgba(0, 0, 0, 0.05);
   color: #555555;
   font-weight: 300;
@@ -186,16 +185,16 @@ section {
 form#contact {
   margin: 0 auto;
   text-align: center;
-  border-bottom: 2px solid #f1f1f1;
+  border-bottom: 2px solid #dddddd;
   width: 300px;
   padding: 20px;
-  background-color: #f1f1f1;
+  background-color: #dddddd;
   margin-bottom: 20px;
 }
 .form-control {
   box-shadow: none;
   border-radius: 0;
-  background-color: white;
+  background-color: #f1f1f1;
   outline: none;
   border: none;
   box-shadow: none !important;
@@ -213,7 +212,7 @@ button#send {
   letter-spacing: 4px;
 }
 .profile_pic{
-  max-width: 7%;
+  max-width: 12%;
   height: auto;
 }
 .d-inline-block{

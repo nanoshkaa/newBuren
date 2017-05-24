@@ -9,7 +9,7 @@
 	<h3>Hallo <?= ($this->session->userdata('name'));
            ?></h3>
 	<h4>Nieuwe Buren Lid :</h4>
-	<div class="container col-md-8"col-md-8"">
+	<div class="container col-xs-12 col-sm-6 col-md-8">
 	<?php 
       for ($i=0; $i < count($user); $i++) { ?>
        <?php if (isset($user[$i]['foto_profile'])) { ?> <img class="profile_user_pic img-responsive" src="/.<?php echo $user[$i] ['foto_profile']; ?>"><?php } ?>
@@ -36,7 +36,7 @@
         <?php if (isset($user[$i]['other'])) echo $user[$i]['other']."."; ?> 
       <?php } ?>
 	</div>
-	<div class="container col-md-4 chat">
+	<div class="container col-xs-6 col-md-4">
 		<h1>Plan een diner met dit gezin!</h1>
 		<a href="/users/start_chat/<?=$user[0]['user_id']?>"><button class="btn btn-warning">Dinner plannen</button></a>
 		<p>je krijgt elkaars contact gegevens om zo zelf een diner in te plannen.</p>
