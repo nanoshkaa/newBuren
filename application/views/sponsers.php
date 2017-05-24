@@ -9,6 +9,7 @@
 	<div class="chat">
     	<img src="../assets/image/main_pic/Capture.png" alt="NieuweBurenLogo" width="125">
         <br>
+        <h4>Sponsers</h4><br>
     </div>
 		<div class="col-xs-6 col-sm-4 chat">
             <img class="sponsers_logo  img-responsive" src="../assets/image/sponsers/1.png" alt="logo"><br>
