@@ -51,6 +51,15 @@ body {
   margin: 0 auto;
   padding: 0 60px 0 0;
 }
+.main_content {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  max-width: 600px;
+  padding: 20px;
+  margin: 0 auto;
+  margin-top: 180px;
+}
 .centerplease {
   margin: 0 auto;
   max-width: auto;

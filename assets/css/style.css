@@ -242,15 +242,7 @@ nav.in li {
   top: 50%;
 }
 
-.content {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  max-width: 600px;
-  padding: 20px;
-  margin: 0 auto;
-  margin-top: 180px;
-}
+
 
 .credit {
   color: #364e41;
