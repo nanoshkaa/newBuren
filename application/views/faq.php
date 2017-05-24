@@ -7,12 +7,8 @@
   </head>
   <body>
   <?php $this->load->view('nav_bar'); ?>  
-     <div class='centerplease'>
-  <center>Frequently Asked Questions</center>
-</div>
-<br>
-
   <div class="content">
+  <center class='centerplease'>FAQ</center><br>
     <div>
       <input type="checkbox" id="question1" name="q"  class="questions">
     <div class="plus">+</div>
