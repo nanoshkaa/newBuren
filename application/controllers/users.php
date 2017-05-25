@@ -46,7 +46,8 @@ class Users extends CI_Controller{
 		$this->session->set_userdata( $user_info);
 		$rec = $this->user->get_rec_message();
 		$sent = $this->user->get_sent_message();
-		$this->load->view('chat.php',['rec'=> $rec]+['sent'=>$sent]); 
+		$all = $this->user->get_my_messages();
+		$this->load->view('chat.php',['rec'=> $rec]+['sent'=>$sent]+['all'=>$all]); 
 	} else {
 		$this->load->view('signin.php');
 	}
@@ -88,7 +89,6 @@ class Users extends CI_Controller{
 	$to = "ah.alhowidi@gmail.com"; // this is your Email address
     $from = $_POST['email']; // this is the sender's Email address
     $name = $_POST['name'];
-    //$last_name = $_POST['last_name'];
     $subject = "Form submission";
     $subject2 = "Copy of your form submission";
     $message = $_POST['message'];

@@ -24,9 +24,10 @@
                   <li class="left clearfix">
                      <div class="chat-body clearfix">
                         <div class="header_sec">
-                           <strong class="primary-font">Jack Sparrow</strong> <strong class="pull-right">
-                           09:45AM</strong>
+                            <?php for ($i=0; $i < count($all); $i++){ ?>
+                           <a class="d-inline-block" href="/Users/start_chat/<?= $all[$i]['user_id'] ?>"><h4><?php echo $all[$i]['name']; ?></h4></a> 
                         </div>
+                        <?php } ?>
                         <div class="contact_sec"></div>
                      </div>
                   </li>

@@ -23,12 +23,12 @@ class user extends CI_Model{
 
 }
 	public function get_all_user(){
-		$this->db->select('*');
-		$this->db->from('users, fotos');
-		$this->db->where('fotos.users_user_id = user_id');
-		$query1 = $this->db->get()->result_array(); 
+		// $this->db->select('*');
+		// $this->db->from('users, fotos');
+		// $this->db->where('fotos.users_user_id = user_id');
+		// $query1 = $this->db->get()->result_array(); 
 		
-		if (!empty($query1)) {
+		// if (!empty($query1)) {
 		$this->db->select('*');
 		$this->db->from('users, situation, family_info, fotos');
 		$this->db->where('fotos.users_user_id = user_id');
@@ -37,25 +37,18 @@ class user extends CI_Model{
 		$query = $this->db->get(); ;
 		return $query->result_array();
 		//return $this->db->query($query, $values)->result_array();
-	}
-		else{
-		$this->db->select('*');
-		$this->db->from('users, situation, family_info');
-		$this->db->where('situation.users_user_id = user_id');
-		$this->db->where('family_info.users_user_id = user_id');
-		$query = $this->db->get(); ;
+	// }
+	// 	else{
+	// 	$this->db->select('*');
+	// 	$this->db->from('users, situation, family_info');
+	// 	$this->db->where('situation.users_user_id = user_id');
+	// 	$this->db->where('family_info.users_user_id = user_id');
+	// 	$query = $this->db->get(); ;
 		
-		return $query->result_array();
+	// 	return $query->result_array();
 		
-		}
-		// $this->db->select('*');
-		// $this->db->from('users, situation , family_info , fotos');
-		// $this->db->where('fotos.users_user_id = user_id');
-		// $this->db->where('situation.users_user_id = user_id');
-		// $this->db->where('family_info.users_user_id = user_id');
-		// $query = $this->db->get(); ;
+	// 	}
 		
-		// return $query->result_array();
 	}
 	public function filter($data){
 		//var_dump($data);
@@ -80,17 +73,7 @@ class user extends CI_Model{
 		//  die();
     return $filter->result_array();
 	}
-	// else  if (isset($data['guest'])) {
-	// 	$this->db->like('guest',$data['guest']);
-	// 		$this->db->like('total_n',$data['total_n']);
-	// 		$this->db->like('location',$data['location']);
-	// 		$this->db->group_by ('email');
-	// 		$filter = $this->db->get('users, situation , family_info , fotos');
-	// 	 // var_dump($filter);
-	// 	 // die();
- //    return $filter->result_array();
-	// }
-//}
+	
 	public function get_user($post){
 		$email = ($post['email']);
 		$password = ($post['password']);
@@ -110,6 +93,7 @@ class user extends CI_Model{
 		$this->db->select('*');
 		$this->db->from('users, messages');
 		$this->db->where('user_id', $user_id);
+		$this->db->where('users_user_id', $user_id);
 		$this->db->where('messages.sent_to',  $message_user_id);
 		$query = $this->db->get(); 
 		return $query->result_array();
@@ -120,7 +104,18 @@ class user extends CI_Model{
 		$this->db->select('*');
 		$this->db->from('users, messages');
 		$this->db->where('user_id', $message_user_id);
+		$this->db->where('users_user_id', $message_user_id);
 		$this->db->where('messages.sent_to', $user_id);
+		$query = $this->db->get(); 
+		return $query->result_array();
+	}
+	public function get_my_messages(){
+		$user_id = $this->session->userdata('user_id');
+		$this->db->select('*');
+		$this->db->from('users, messages');
+		$this->db->where('messages.sent_to', $user_id);
+		$this->db->where('messages.users_user_id', $user_id);
+		$this->db->group_by('name');
 		$query = $this->db->get(); 
 		return $query->result_array();
 	}
